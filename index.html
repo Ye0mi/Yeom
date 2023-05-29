@@ -3,6 +3,11 @@
 <head>
   <title>생일 확인</title>
   <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <style>
+    #birthday-question, #inner-site {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <h1>사이트에 오신 것을 환영합니다!</h1>
@@ -14,31 +19,20 @@
     <button id="no-button">아니오</button>
   </div>
 
-  <script src="assets/script.js"></script>
+  <!-- 내부 사이트 -->
+  <div id="inner-site">
+    <iframe src="index - main.html" frameborder="0"></iframe>
+  </div>
 
-  <div id="cincopa_07c3e7" style="display: none;">...</div>
-  
-  <script type="text/javascript">
-    var cpo = [];
-    cpo["_object"] = "cincopa_07c3e7";
-    cpo["_fid"] = "A8MAx8-B16EA";
-    var _cpmp = _cpmp || [];
-    _cpmp.push(cpo);
-    function showCincopa() {
-      var cincopaDiv = document.getElementById('cincopa_07c3e7');
-      cincopaDiv.style.display = 'block';
-      
-      var cp = document.createElement("script");
-      cp.type = "text/javascript";
-      cp.async = true;
-      cp.src = "https://rtcdn.cincopa.com/libasync.js";
-      var c = document.getElementsByTagName("script")[0];
-      c.parentNode.insertBefore(cp, c);
+  <script src="assets2/script.js"></script>
+  <script>
+    function showInnerSite() {
+      document.getElementById('birthday-question').style.display = 'none';
+      document.getElementById('inner-site').style.display = 'block';
     }
-    
+
     document.getElementById('yes-button').addEventListener('click', function() {
-      hideBirthdayQuestion();
-      showCincopa();
+      showInnerSite();
     });
   </script>
 </body>
