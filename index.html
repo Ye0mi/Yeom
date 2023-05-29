@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>생일 확인</title>
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <title>생일 체크</title>
   <style>
-    #birthday-question, #inner-site {
-      display: none;
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    #question {
+      font-size: 24px;
+      margin-top: 100px;
+    }
+    
+    #options {
+      margin-top: 20px;
+    }
+    
+    #options button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>사이트에 오신 것을 환영합니다!</h1>
-
-  <!-- 생일 확인 창 -->
-  <div id="birthday-question">
-    <h2>당신은 오늘 생일입니까?</h2>
-    <button id="yes-button">예</button>
-    <button id="no-button">아니오</button>
+  <div id="question">
+    오늘 생일이신가요?
+  </div>
+  <div id="options">
+    <button onclick="checkBirthday(true)">예</button>
+    <button onclick="checkBirthday(false)">아니오</button>
   </div>
 
-  <!-- 내부 사이트 -->
-  <div id="inner-site"></div>
-
-  <script src="assets2/script.js"></script>
   <script>
-    function showInnerSite() {
-      document.getElementById('birthday-question').style.display = 'none';
-      document.getElementById('inner-site').innerHTML = '<iframe src="index - main.html" frameborder="0"></iframe>';
-      document.getElementById('inner-site').style.display = 'block';
+    function checkBirthday(isBirthday) {
+      if (isBirthday) {
+        window.location.href = "index - main.html";
+      } else {
+        // 생일이 아닌 경우에 대한 처리를 여기에 추가할 수 있습니다.
+      }
     }
-
-    document.getElementById('yes-button').addEventListener('click', function() {
-      showInnerSite();
-    });
   </script>
 </body>
 </html>
