@@ -20,14 +20,13 @@
   </div>
 
   <!-- 내부 사이트 -->
-  <div id="inner-site">
-    <iframe src="index - main.html" frameborder="0"></iframe>
-  </div>
+  <div id="inner-site"></div>
 
   <script src="assets2/script.js"></script>
   <script>
     function showInnerSite() {
       document.getElementById('birthday-question').style.display = 'none';
+      document.getElementById('inner-site').innerHTML = '<iframe src="index - main.html" frameborder="0"></iframe>';
       document.getElementById('inner-site').style.display = 'block';
     }
 
