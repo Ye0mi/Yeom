@@ -1,3 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera App with JS</title>
+    <link rel="stylesheet" href="/Users/yeomi/Desktop/website/happybday/assets2/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="camera-video">
+            <h1>Camera App with JS</h1>
+            <video id="video" width="500" height="340"></video>
+            <button id="snap"></button>
+        </div>
+        <div class="camera-snapshot" id="camera-snapshot">
+
+        </div>
+    </div>
+    <script src="/Users/yeomi/Desktop/website/happybday/assets2/script.js"></script>
+</body>
+</html>
+
 <div id="cincopa_18f3f5">...</div><script type="text/javascript">
 var cpo = []; cpo["_object"] ="cincopa_18f3f5"; cpo["_fid"] = "A8MAx8-B16EA";
 var _cpmp = _cpmp || []; _cpmp.push(cpo);
@@ -6,37 +31,4 @@ cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
 var c = document.getElementsByTagName("script")[0];
 c.parentNode.insertBefore(cp, c); })(); </script>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>카메라 미리보기</title>
-  <style>
-    #video {
-      width: 100%;
-      height: auto;
-    }
-  </style>
-</head>
-<body>
-  <video id="video" autoplay></video>
 
-  <script>
-    // 웹 브라우저에서 getUserMedia를 지원하는지 확인합니다.
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // getUserMedia를 사용하여 노트북 카메라로부터 비디오 스트림을 가져옵니다.
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-          var video = document.getElementById('video');
-          // 비디오 요소에 스트림을 연결합니다.
-          video.srcObject = stream;
-          video.play();
-        })
-        .catch(function(error) {
-          console.error('카메라에 접근할 수 없습니다.', error);
-        });
-    } else {
-      console.error('getUserMedia를 지원하지 않는 웹 브라우저입니다.');
-    }
-  </script>
-</body>
-</html>
