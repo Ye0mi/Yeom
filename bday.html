@@ -1,45 +1,37 @@
-
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Camera</title>
-	<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script> 
+</head>
+<body>
+	<video id="video" width="800" height="600" autoplay></video>
+	<button id="captureBtn" onclick="capture()">Capture</button>
+	<canvas id="canvas" width="800" height="600"></canvas>
 
-<style>
+	<script>
+		const videoElement = document.getElementById("video");
+		const captureButton = document.getElementById("captureBtn");
+		const canvasElement = document.getElementById("canvas");
+		const canvasContext = canvasElement.getContext("2d");
 
-	a {
-		padding: 10px;
-		background-color: orange;
-		color: white;
-		text-decoration: none;
-	}
-	canvas {
+		navigator.mediaDevices.getUserMedia({ video: true })
+			.then(function (stream) {
+				videoElement.srcObject = stream;
+			})
+			.catch(function (error) {
+				console.error("Error accessing the camera: ", error);
+			});
 
-		display: none;
-	}
-</style> 
-</head> 
-<body> 
-	<video id="webCam" autoplay playsinline width="800" height="600"></video> 
-	<canvas id="canvas"></canvas> 
-	<a download onClick="takeAPicture()">SNAP</a>
-
-<script>
-	const webCamElement = document.getElementById("webCam");
-	const canvasElement = document.getElementById("canvas");
-	const webcam = new Webcam(webCamElement, "user", canvasElement);
-	webcam.start();
-
-	function takeAPicture() {
-		let picture = webcam.snap();
-		document.querySelector("a").href = picture;
-	}
-</script> 
-</body> 
+		function capture() {
+			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+			const picture = canvasElement.toDataURL("image/png");
+			const downloadLink = document.createElement("a");
+			downloadLink.href = picture;
+			downloadLink.download = "snapshot.png";
+			downloadLink.click();
+		}
+	</script>
+</body>
 </html>
-
-
-
-
