@@ -4,8 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Internal Links</title>
+	<style>
+		body {
+			background-color: white;
+			transition: background-color 1s;
+		}
+	</style>
 </head>
-<body>
+<body onload="changeBackgroundColor()">
+
 	<button onclick="goToLink('link1')">Link 1</button>
 	<button onclick="goToLink('link2')">Link 2</button>
 	<button onclick="goToLink('link3')">Link 3</button>
@@ -32,8 +39,9 @@
 		}
 
 		function changeBackgroundColor() {
-			document.body.style.backgroundColor = "black";
-
+			setTimeout(function() {
+				document.body.style.backgroundColor = "black";
+			}, 1000);
 		}
 	</script>
 </body>
