@@ -3,38 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Camera</title>
+	<title>Internal Links</title>
 </head>
 <body>
-	<video id="video" width="800" height="600" autoplay></video>
-	<button id="captureBtn" onclick="capture()">Capture</button>
-	<canvas id="canvas" style="display: none;"></canvas> <!-- 캔버스를 숨기도록 스타일 추가 -->
+	<button onclick="goToLink('link1')">Link 1</button>
+	<button onclick="goToLink('link2')">Link 2</button>
+	<button onclick="goToLink('link3')">Link 3</button>
+	<button onclick="goToLink('link4')">Link 4</button>
 
 	<script>
-		const videoElement = document.getElementById("video");
-		const captureButton = document.getElementById("captureBtn");
-		const canvasElement = document.getElementById("canvas");
-		const canvasContext = canvasElement.getContext("2d");
-
-		navigator.mediaDevices.getUserMedia({ video: true })
-			.then(function (stream) {
-				videoElement.srcObject = stream;
-			})
-			.catch(function (error) {
-				console.error("Error accessing the camera: ", error);
-			});
-
-		function capture() {
-			canvasElement.width = videoElement.videoWidth;
-			canvasElement.height = videoElement.videoHeight;
-			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
-			canvasElement.style.display = "block"; // 캔버스 표시
-			const picture = canvasElement.toDataURL("image/png");
-			const downloadLink = document.createElement("a");
-			downloadLink.href = picture;
-			downloadLink.download = "snapshot.png";
-			downloadLink.click();
-			canvasElement.style.display = "none"; // 캔버스 숨김
+		function goToLink(linkId) {
+			switch (linkId) {
+				case 'link1':
+					window.location.href = "bdaycam.html";
+					break;
+				case 'link2':
+					window.location.href = 'https://example.com/link2';
+					break;
+				case 'link3':
+					window.location.href = 'https://example.com/link3';
+					break;
+				case 'link4':
+					window.location.href = 'https://example.com/link4';
+					break;
+				default:
+					break;
+			}
 		}
 	</script>
 </body>

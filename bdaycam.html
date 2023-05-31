@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Camera</title>
+</head>
+<body>
+	<video id="video" width="800" height="600" autoplay></video>
+	<button id="captureBtn" onclick="capture()">Capture</button>
+	<canvas id="canvas" style="display: none;"></canvas> <!-- 캔버스를 숨기도록 스타일 추가 -->
+
+	<script>
+		const videoElement = document.getElementById("video");
+		const captureButton = document.getElementById("captureBtn");
+		const canvasElement = document.getElementById("canvas");
+		const canvasContext = canvasElement.getContext("2d");
+
+		navigator.mediaDevices.getUserMedia({ video: true })
+			.then(function (stream) {
+				videoElement.srcObject = stream;
+			})
+			.catch(function (error) {
+				console.error("Error accessing the camera: ", error);
+			});
+
+		function capture() {
+			canvasElement.width = videoElement.videoWidth;
+			canvasElement.height = videoElement.videoHeight;
+			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+			canvasElement.style.display = "block"; // 캔버스 표시
+			const picture = canvasElement.toDataURL("image/png");
+			const downloadLink = document.createElement("a");
+			downloadLink.href = picture;
+			downloadLink.download = "snapshot.png";
+			downloadLink.click();
+			canvasElement.style.display = "none"; // 캔버스 숨김
+		}
+	</script>
+</body>
+</html>
