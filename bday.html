@@ -10,13 +10,6 @@
 			transition: background-color 1s;
 		}
 	</style>
-	<script>
-		function changeBackgroundColor() {
-			setTimeout(function() {
-				document.body.style.backgroundColor = "black";
-			}, 1000);
-		}
-	</script>
 </head>
 <body onload="changeBackgroundColor()">
 
@@ -28,7 +21,7 @@
 	<script>
 		function goToLink(linkId) {
 			switch (linkId) {
-				case 'link1':
+				case 'Camera':
 					window.location.href = "bdaycam.html";
 					break;
 				case 'link2':
@@ -43,6 +36,10 @@
 				default:
 					break;
 			}
+		}
+
+		function changeBackgroundColor() {
+			document.body.style.backgroundColor = "black";
 		}
 	</script>
 </body>
