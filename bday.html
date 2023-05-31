@@ -12,26 +12,20 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Internal Links</title>
-	<style>
-		body {
-			background-color: white;
-			transition: background-color 1s;
-		}
-	</style>
 </head>
-<body onload="changeBackgroundColor()">
-
-	<button onclick="goToLink('link1')">Camera</button>
+<body>
+	<button onclick="goToLink('link1')">Link 1</button>
 	<button onclick="goToLink('link2')">Link 2</button>
 	<button onclick="goToLink('link3')">Link 3</button>
 	<button onclick="goToLink('link4')">Link 4</button>
 
 	<img src="/pic/cake.png" alt="My Image">
 
+
 	<script>
 		function goToLink(linkId) {
 			switch (linkId) {
-				case 'link1':
+				case 'Camera':
 					window.location.href = "bdaycam.html";
 					break;
 				case 'link2':
@@ -47,10 +41,7 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 					break;
 			}
 		}
-
-		function changeBackgroundColor() {
-			document.body.style.backgroundColor = "black";
-		}
 	</script>
 </body>
 </html>
+
