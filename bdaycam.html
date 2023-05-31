@@ -15,17 +15,18 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 	<title>Camera</title>
 </head>
 <body>
-
-
 	<video id="video" width="800" height="600" autoplay></video>
 	<button id="captureBtn" onclick="capture()">Capture</button>
-	<canvas id="canvas" style="display: none;"></canvas> <!-- 캔버스를 숨기도록 스타일 추가 -->
+	<canvas id="canvas" style="display: none;"></canvas>
 
 	<script>
 		const videoElement = document.getElementById("video");
 		const captureButton = document.getElementById("captureBtn");
 		const canvasElement = document.getElementById("canvas");
 		const canvasContext = canvasElement.getContext("2d");
+		const heartImage = new Image();
+
+		heartImage.src = "/img/cake.png"; // 하트 이미지 파일 경로
 
 		navigator.mediaDevices.getUserMedia({ video: true })
 			.then(function (stream) {
@@ -39,17 +40,20 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 			canvasElement.width = videoElement.videoWidth;
 			canvasElement.height = videoElement.videoHeight;
 			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
-			canvasElement.style.display = "block"; // 캔버스 표시
+
+			// 하트 이미지를 캔버스에 그립니다.
+			const heartSize = 100; // 하트 이미지의 크기
+			const heartX = canvasElement.width - heartSize - 10; // 하트가 그려질 x 좌표
+			const heartY = 10; // 하트가 그려질 y 좌표
+			canvasContext.drawImage(heartImage, heartX, heartY, heartSize, heartSize);
+
+			// 촬영된 이미지 다운로드
 			const picture = canvasElement.toDataURL("image/png");
 			const downloadLink = document.createElement("a");
 			downloadLink.href = picture;
 			downloadLink.download = "snapshot.png";
 			downloadLink.click();
-			canvasElement.style.display = "none"; // 캔버스 숨김
 		}
 	</script>
-
-	<img src="/img/cake.png" alt="Image">
 </body>
 </html>
-
