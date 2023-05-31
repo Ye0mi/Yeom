@@ -1,20 +1,19 @@
-<div id="cincopa_fbeda4">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cincopa_fbeda4"; cpo["_fid"] = "A8MAx8-B16EA";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Internal Links</title>
+	<style>
+		body {
+			background-color: white;
+			transition: background-color 2s;
+		}
+	</style>
 </head>
-<body>
-	<button onclick="goToLink('link1')">Link 1</button>
+<body onload="changeBackgroundColor()">
+
+	<button onclick="goToLink('link1')">Camera</button>
 	<button onclick="goToLink('link2')">Link 2</button>
 	<button onclick="goToLink('link3')">Link 3</button>
 	<button onclick="goToLink('link4')">Link 4</button>
@@ -22,7 +21,7 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 	<script>
 		function goToLink(linkId) {
 			switch (linkId) {
-				case 'link1':
+				case 'Camera':
 					window.location.href = "bdaycam.html";
 					break;
 				case 'link2':
@@ -38,7 +37,10 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 					break;
 			}
 		}
+
+		function changeBackgroundColor() {
+			document.body.style.backgroundColor = "black";
+		}
 	</script>
 </body>
 </html>
-
