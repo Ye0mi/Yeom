@@ -8,7 +8,7 @@
 <body>
 	<video id="video" width="800" height="600" autoplay></video>
 	<button id="captureBtn" onclick="capture()">Capture</button>
-	<canvas id="canvas"></canvas>
+	<canvas id="canvas" style="display: none;"></canvas> <!-- 캔버스를 숨기도록 스타일 추가 -->
 
 	<script>
 		const videoElement = document.getElementById("video");
@@ -25,14 +25,16 @@
 			});
 
 		function capture() {
-			canvasElement.width = videoElement.videoWidth; // 캔버스 너비를 비디오의 너비로 설정
-			canvasElement.height = videoElement.videoHeight; // 캔버스 높이를 비디오의 높이로 설정
+			canvasElement.width = videoElement.videoWidth;
+			canvasElement.height = videoElement.videoHeight;
 			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+			canvasElement.style.display = "block"; // 캔버스 표시
 			const picture = canvasElement.toDataURL("image/png");
 			const downloadLink = document.createElement("a");
 			downloadLink.href = picture;
 			downloadLink.download = "snapshot.png";
 			downloadLink.click();
+			canvasElement.style.display = "none"; // 캔버스 숨김
 		}
 	</script>
 </body>
