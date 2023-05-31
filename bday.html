@@ -1,3 +1,11 @@
+<div id="cincopa_fbeda4">...</div><script type="text/javascript">
+var cpo = []; cpo["_object"] ="cincopa_fbeda4"; cpo["_fid"] = "A8MAx8-B16EA";
+var _cpmp = _cpmp || []; _cpmp.push(cpo);
+(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
+cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
+var c = document.getElementsByTagName("script")[0];
+c.parentNode.insertBefore(cp, c); })(); </script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +21,17 @@
 </head>
 <body onload="changeBackgroundColor()">
 
-	<button onclick="goToLink('link1')">Link 1</button>
+	<button onclick="goToLink('link1')">Camera</button>
 	<button onclick="goToLink('link2')">Link 2</button>
 	<button onclick="goToLink('link3')">Link 3</button>
 	<button onclick="goToLink('link4')">Link 4</button>
 
+	<img src="/pic/cake.png" alt="My Image">
+
 	<script>
 		function goToLink(linkId) {
 			switch (linkId) {
-				case 'Camera':
+				case 'link1':
 					window.location.href = "bdaycam.html";
 					break;
 				case 'link2':
@@ -35,8 +45,6 @@
 					break;
 				default:
 					break;
-
-				heartImage.src = "/pic/cake.png";
 			}
 		}
 
