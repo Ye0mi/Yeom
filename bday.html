@@ -10,6 +10,13 @@
 			transition: background-color 1s;
 		}
 	</style>
+	<script>
+		function changeBackgroundColor() {
+			setTimeout(function() {
+				document.body.style.backgroundColor = "black";
+			}, 1000);
+		}
+	</script>
 </head>
 <body onload="changeBackgroundColor()">
 
@@ -36,12 +43,6 @@
 				default:
 					break;
 			}
-		}
-
-		function changeBackgroundColor() {
-			setTimeout(function() {
-				document.body.style.backgroundColor = "black";
-			}, 1000);
 		}
 	</script>
 </body>
