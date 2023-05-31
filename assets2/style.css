@@ -53,6 +53,24 @@ button:hover{
     padding: 3px 1.5px;
 }
 
+.container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.canvas {
+    display: none;
+}
+
+
 /* Width */
 .camera-snapshot::-webkit-scrollbar{
     height: 5px;

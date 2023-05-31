@@ -15,8 +15,11 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 	<script src="/assets2/script.js"></script>
 </head>
 <body>
-	<video id="video" width="800" height="600" autoplay></video>
-	<button id="captureBtn" onclick="capture()">Capture</button>
+	<div class="container">
+		<video id="video" width="800" height="600" autoplay></video>
+		<button id="captureBtn" onclick="capture()">Capture</button>
+		<img src="https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg" alt="Heart Image" class="image-overlay">
+	</div>
 	<canvas id="canvas" style="display: none;"></canvas>
 
 	<script>
@@ -26,7 +29,7 @@ c.parentNode.insertBefore(cp, c); })(); </script>
 		const canvasContext = canvasElement.getContext("2d");
 		const heartImage = new Image();
 
-		heartImage.src = "/pic/cake.png"; // 하트 이미지 파일 경로
+		heartImage.src = "https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg"; // 하트 이미지 파일 경로
 
 		navigator.mediaDevices.getUserMedia({ video: true })
 			.then(function (stream) {
