@@ -8,7 +8,7 @@
 <body>
 	<video id="video" width="800" height="600" autoplay></video>
 	<button id="captureBtn" onclick="capture()">Capture</button>
-	<canvas id="canvas" width="800" height="600"></canvas>
+	<canvas id="canvas"></canvas>
 
 	<script>
 		const videoElement = document.getElementById("video");
@@ -25,6 +25,8 @@
 			});
 
 		function capture() {
+			canvasElement.width = videoElement.videoWidth; // 캔버스 너비를 비디오의 너비로 설정
+			canvasElement.height = videoElement.videoHeight; // 캔버스 높이를 비디오의 높이로 설정
 			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
 			const picture = canvasElement.toDataURL("image/png");
 			const downloadLink = document.createElement("a");
