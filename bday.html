@@ -16,43 +16,164 @@
 			display: inline-block; /* 컨테이너를 인라인 블록으로 설정하여 이미지 크기에 맞추기 */
 		}
 		
+
+		.gif-container img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-170%, 140%); /* 이미지 중앙 정렬 */
+			width: 260px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			z-index: 2;
+
+
+		}
+
+		.gif-container2 img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-90%, 140%); /* 이미지 중앙 정렬 */
+			width: 260px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			z-index: 2;
+
+
+		}
+
+		.gif-container3 img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-10%, 140%); /* 이미지 중앙 정렬 */
+			width: 260px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			z-index: 2;
+
+
+		}
+
+		.gif-container4 img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(70%, 140%); /* 이미지 중앙 정렬 */
+			width: 260px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			z-index: 2;
+
+
+		}
+		
+		.image-container img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(30%, 60%); /* 이미지 중앙 정렬 */
+			width: 450px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+		}
+
+		.image-container2 img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(7%, 50%); /* 이미지 중앙 정렬 */
+			width: 860px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+		}
+
 		.button-overlay {
 			position: absolute; /* 버튼을 컨테이너에 대해 절대적 위치로 설정 */
 			top: 0;
 			left: 0;
 			z-index: 1; /* 버튼을 이미지 위로 겹치도록 함 */
 		}
+
+		.date-container {
+			position: absolute;
+			top: 25px;
+			right: 730px;
+			font-family: 'Chokokutai', sans-serif;
+
+			font-size: 38px;
+			font-weight: lighter;
+			color: hotpink;
+			text-align: left;
+			line-height: 0.7;
+		}
+
+		.date-container2 {
+			position: absolute;
+			top: 660px;
+			right: 380px;
+			font-family: 'Chokokutai', sans-serif;
+
+			font-size: 46px;
+			font-weight: lighter;
+			color: hotpink;
+			text-align: center;
+			line-height: 0.7;
+		}
 	</style>
 </head>
 <body onload="changeBackgroundColor()">
+<link href="https://fonts.googleapis.com/css2?family=Chokokutai&display=swap" rel="stylesheet">
+
 
 	<div class="image-container">
-		<img src="https://assets.allpngfree.com/storage/thumbnails/happy-birthday-cake-png-images-thumbnail-1649280936.jpg" alt="My Image">
-		<div class="button-overlay">
-			<button onclick="goToLink('link1')">Link 1</button>
-			<button onclick="goToLink('link2')">Link 2</button>
-			<button onclick="goToLink('link3')">Link 3</button>
-			<button onclick="goToLink('link4')">Link 4</button>
+		 <a href="cake.html">
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjgx/MDAxNjg1NjQ0MDk2MzI0.tjJ9ZFS9lOZWUfvAb8ognPENVTw_Q4uKcSO5T_hPZcYg.pcIvkB0eJpKQXuzFFTEDWCnJLo9ZZXTnqQIfTb1AsZ0g.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_174.png?type=w773">
+			
 		</div>
+
+		</div>
+  	<div class="image-container2">
+    	<a href="bdaycam.html">
+	      <img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMTIy/MDAxNjg1NjUwMjE0MTY0.hkiijkoWxVYktUWy6dxfeADS5Jmt3GB_OBjBj-MZExEg.Hgp6TEvsXR1TDUegxZY58ERCHQqI_ESwd_S21dHkW7Ig.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_179.png?type=w773" alt="두 번째 이미지">
+	    </a>
+	   
+  
+	</div>
+
+	<div class="date-container">
+		<h1>Happy Birthday</h1>
+		</div>
+
+	<div class="date-container2">
+		<script>
+
+			var today = new Date();
+			var date = today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();
+			document.write(date);
+		</script>
+	</div>
+
+
+
+	<div class="gif-container">
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjMy/MDAxNjg1NjQ0MDk2MjMz.SFIEsNsaj_PCZZcJvp-gOWDKiqzcq5ZAKx7gXRPk9Q8g.A9_4ii00kOJHYd22rPF4Hyzze1fceFkz38E143MoUIsg.GIF.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_13.gif?type=w773" alt="Your GIF">
+	</div>
+	<div class="gif-container2">
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjMy/MDAxNjg1NjQ0MDk2MjMz.SFIEsNsaj_PCZZcJvp-gOWDKiqzcq5ZAKx7gXRPk9Q8g.A9_4ii00kOJHYd22rPF4Hyzze1fceFkz38E143MoUIsg.GIF.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_13.gif?type=w773" alt="Your GIF">
+	</div>
+	<div class="gif-container3">
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjMy/MDAxNjg1NjQ0MDk2MjMz.SFIEsNsaj_PCZZcJvp-gOWDKiqzcq5ZAKx7gXRPk9Q8g.A9_4ii00kOJHYd22rPF4Hyzze1fceFkz38E143MoUIsg.GIF.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_13.gif?type=w773" alt="Your GIF">
+	</div><div class="gif-container4">
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjMy/MDAxNjg1NjQ0MDk2MjMz.SFIEsNsaj_PCZZcJvp-gOWDKiqzcq5ZAKx7gXRPk9Q8g.A9_4ii00kOJHYd22rPF4Hyzze1fceFkz38E143MoUIsg.GIF.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_13.gif?type=w773" alt="Your GIF">
 	</div>
 
 	<script>
 		function goToLink(linkId) {
-			switch (linkId) {
-				case 'link1':
-					window.location.href = "bdaycam.html";
-					break;
-				case 'link2':
-					window.location.href = 'https://example.com/link2';
-					break;
-				case 'link3':
-					window.location.href = 'https://example.com/link3';
-					break;
-				case 'link4':
-					window.location.href = 'https://example.com/link4';
-					break;
-				default:
-					break;
+      switch (linkId) {
+        case 'link1':
+          window.location.href = "cake.html";
+          break;
+        case 'link2':
+          window.location.href = "bdaycam.html";
+          break;
+        default:
+          break;
 			}
 		}
 

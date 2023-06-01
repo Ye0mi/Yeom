@@ -1,62 +1,99 @@
-<div id="cincopa_7c5258">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cincopa_7c5258"; cpo["_fid"] = "A8MAx8-B16EA";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Camera</title>
-	<script src="/assets2/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+    <link rel="stylesheet" href="/assets2/styles.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #video {
+            width: 100%;
+            height: auto;
+            transform: translate(40%, 25%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-16%, -35%);
+            width: 900px; /* 이미지의 가로 크기 조정 */
+            height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .canvas {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<video id="video" width="800" height="600" autoplay></video>
-		<button id="captureBtn" onclick="capture()">Capture</button>
-		<img src="https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg" alt="Heart Image" class="image-overlay">
-	</div>
-	<canvas id="canvas" style="display: none;"></canvas>
+    <div id="cincopa_7c5258">...</div>
 
-	<script>
-		const videoElement = document.getElementById("video");
-		const captureButton = document.getElementById("captureBtn");
-		const canvasElement = document.getElementById("canvas");
-		const canvasContext = canvasElement.getContext("2d");
-		const heartImage = new Image();
+    <div class="container">
+        <video id="video" width="800" height="600" autoplay></video>
+        <button id="captureBtn" onclick="capture()">Capture</button>
+        <img src="https://postfiles.pstatic.net/MjAyMzA2MDJfNDIg/MDAxNjg1NjQ4Nzc4MDUz.xq35NSFKQ335GD1XaE2fMEpdNQxAp_Y6_bk4hkZE-k4g.e6646G3YE26DUgp22Y0AOzM4C67cbtjP3-BGMF6R4XQg.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_178.png?type=w773" alt="Heart Image" class="image-overlay">
+    </div>
+    <canvas id="canvas" style="display: none;"></canvas>
 
-		heartImage.src = "https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg"; // 하트 이미지 파일 경로
+    <script src="/assets2/script.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-		navigator.mediaDevices.getUserMedia({ video: true })
-			.then(function (stream) {
-				videoElement.srcObject = stream;
-			})
-			.catch(function (error) {
-				console.error("Error accessing the camera: ", error);
-			});
+    <script>
+        const videoElement = document.getElementById("video");
+        const captureButton = document.getElementById("captureBtn");
+        const canvasElement = document.getElementById("canvas");
+        const canvasContext = canvasElement.getContext("2d");
+        const heartImage = new Image();
 
-		function capture() {
-			canvasElement.width = videoElement.videoWidth;
-			canvasElement.height = videoElement.videoHeight;
-			canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+        heartImage.src = "https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg"; // 하트 이미지 파일 경로
 
-			// 하트 이미지를 캔버스에 그립니다.
-			const heartSize = 100; // 하트 이미지의 크기
-			const heartX = canvasElement.width - heartSize - 10; // 하트가 그려질 x 좌표
-			const heartY = 10; // 하트가 그려질 y 좌표
-			canvasContext.drawImage(heartImage, heartX, heartY, heartSize, heartSize);
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                videoElement.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error("Error accessing the camera: ", error);
+            });
 
-			// 촬영된 이미지 다운로드
-			const picture = canvasElement.toDataURL("image/png");
-			const downloadLink = document.createElement("a");
-			downloadLink.href = picture;
-			downloadLink.download = "snapshot.png";
-			downloadLink.click();
-		}
-	</script>
+        function capture() {
+            canvasElement.width = videoElement.videoWidth;
+            canvasElement.height = videoElement.videoHeight;
+            
+            canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+            canvasContext.drawImage(heartImage, 0, 0, canvasElement.width, canvasElement.height);
+            
+            html2canvas(document.body).then(function (canvas) {
+                const picture = canvas.toDataURL("image/png");
+                const downloadLink = document.createElement("a");
+                downloadLink.href = picture;
+                downloadLink.download = "screenshot.png";
+                downloadLink.click();
+            });
+        }
+
+
+
+    </script>
 </body>
 </html>
+

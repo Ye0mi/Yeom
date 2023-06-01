@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   background-color: rgb(16, 16, 16);
   font-family: 'Segoe UI Light';
   color: #f1f1f1;
@@ -23,7 +22,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* 추가 */
 }
 
 video {
@@ -50,6 +48,21 @@ button:hover {
   background-size: 60%;
 }
 
+.overlay-container {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  z-index: 3;
+}
+
+.canvas {
+  display: none;
+}
+
 .camera-snapshot {
   background-color: rgb(255, 255, 255, .021);
   height: 200px;
@@ -58,17 +71,6 @@ button:hover {
   display: flex;
   overflow-x: scroll;
   padding: 3px 1.5px;
-}
-
-.image-overlay {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-}
-
-.canvas {
-  display: none;
 }
 
 /* Width */

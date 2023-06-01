@@ -1,1 +1,20 @@
+body {
+	background-color: white;
+	transition: background-color 1s;
+	position: relative;
+}
+
+.image-container {
+	position: relative;
+	display: inline-block;
+}
+
+.
+
+.button-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
 

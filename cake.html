@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Camera</title>
+	<link rel="stylesheet" href="/assets2/styles.css">
+	<style>
+
+		body {
+			background-color: black;
+		}
+
+		#video {
+			width: 100%;
+			height: auto;
+			transform: translate(40%, 25%);
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.container img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-2%, -35%);
+			width: 650px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+		}
+
+		.container {
+			position: relative;
+			width: 800px;
+			height: 600px;
+		}
+
+		.image-overlay {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 1;
+		}
+
+		.canvas {
+			display: none;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div id="cincopa_7c5258">...</div>
+
+	<div class="container">
+	
+	
+		<img src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjY3/MDAxNjg1NjQ2ODYwNzU2.aA942sI2_YEO-FEzI5LbgVljeLNAW6vexxxbl2KOItEg.Rq4Zn8RHxN_s6l6NgGqHHQLvzvoOsBxqN122hhtwrLsg.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_176.png?type=w773" alt="Heart Image" class="image-overlay">
+	</div>
+	<canvas id="canvas" style="display: none;"></canvas>
+
+	
+	<script>
+		
+	</script>
+</body>
+</html>
