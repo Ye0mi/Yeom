@@ -49,7 +49,7 @@
     var audio2 = new Audio("maxwell.mp3");
     var audio3 = new Audio("capi.mp3");
 
-    // 초기화 후 음악 재생
+    // 초기화 후 음악 반복 재생
     audio1.addEventListener("canplaythrough", function() {
       audio1.loop = true;
     });
@@ -98,9 +98,12 @@
       } else if (event.key === "ArrowRight") {
         toggleDanceMove();
       }
-    });
 
-    // 사용자 코드
+      // 아무 키보드를 누르면 모든 음악 재생
+      audio1.play();
+      audio2.play();
+      audio3.play();
+    });
   </script>
 </body>
 </html>
