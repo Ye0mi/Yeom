@@ -16,10 +16,28 @@
     .left {
       transform: scaleX(-1);
     }
+
+    .letter {
+      position: relative;
+    
+      font-family: 'Rubik Puddles', sans-serif;
+
+      font-size: 20px;
+      font-weight: lighter;
+      color: royalblue;
+      text-align: left;
+    
+      z-index: 0;
+      
+      line-height: 0.9;
+    }
   </style>
 </head>
 <body>
-  <h1>음악 리믹스</h1>
+  
+  <div class="letter">
+    <h1>press left n right key <br> </h1>
+    </div>
 
   <label for="audio1">음악 1:</label>
   <input type="range" class="slider" id="volume1" min="0" max="1" step="0.1" value="1">
@@ -34,8 +52,8 @@
   <br>
 
   <div id="danceMoves">
-    <img id="leftImage" src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjY3/MDAxNjg1NjQ2ODYwNzU2.aA942sI2_YEO-FEzI5LbgVljeLNAW6vexxxbl2KOItEg.Rq4Zn8RHxN_s6l6NgGqHHQLvzvoOsBxqN122hhtwrLsg.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_176.png?type=w773" alt="왼쪽 춤추는 사람">
-    <img id="rightImage" src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjgx/MDAxNjg1NjQ0MDk2MzI0.tjJ9ZFS9lOZWUfvAb8ognPENVTw_Q4uKcSO5T_hPZcYg.pcIvkB0eJpKQXuzFFTEDWCnJLo9ZZXTnqQIfTb1AsZ0g.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_174.png?type=w773" alt="오른쪽 춤추는 사람">
+    <img id="leftImage" src="images/cake.png" alt="왼쪽 춤추는 사람">
+    <img id="rightImage" src="images/wholecake.png" alt="오른쪽 춤추는 사람">
   </div>
 
   <script>
