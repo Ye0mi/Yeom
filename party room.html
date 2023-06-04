@@ -9,9 +9,34 @@
     }
     
     #danceMoves {
-      width: 200px;
-      height: 200px;
-    }
+    position: relative; /* 부모 요소를 상대 위치로 설정 */
+    width: 200px;
+    height: 200px;
+    transform: translate(100%, 100%);
+  }
+
+  #leftImage,
+  #rightImage {
+    width: 100px;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(100%, 100%);
+  }
+
+     #leftImage,
+  #rightImage {
+    width: 100px;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 20px); /* 수정된 부분 */
+    transform: translate(-50%, -50%);
+  }
+
     
     .left {
       transform: scaleX(-1);
@@ -36,8 +61,8 @@
 <body>
   
   <div class="letter">
-    <h1>press left n right key <br> </h1>
-    </div>
+    <h1>press left or right or up key<br></h1>
+  </div>
 
   <label for="audio1">음악 1:</label>
   <input type="range" class="slider" id="volume1" min="0" max="1" step="0.1" value="1">
@@ -52,8 +77,8 @@
   <br>
 
   <div id="danceMoves">
-    <img id="leftImage" src="images/cake.png" alt="왼쪽 춤추는 사람">
-    <img id="rightImage" src="images/wholecake.png" alt="오른쪽 춤추는 사람">
+    <img id="leftImage" class="danceImage" src="images/left.png" alt="왼쪽 춤추는 사람">
+    <img id="rightImage" class="danceImage" src="images/right.png" alt="오른쪽 춤추는 사람">
   </div>
 
   <script>
@@ -94,9 +119,42 @@
     });
 
     // 춤을 추는 모션
+    var danceMoves = document.getElementById("danceMoves");
     var leftImage = document.getElementById("leftImage");
     var rightImage = document.getElementById("rightImage");
     var isLeftMove = true;
+    var isJumping = false;
+    var originalTop = danceMoves.offsetHeight / 2;
+
+    function jump(image) {
+      if (isJumping) return;
+
+      isJumping = true;
+      var jumpHeight = 100; // 점프 높이 (픽셀 단위)
+      var jumpDuration = 500; // 점프 지속 시간 (밀리초 단위)
+
+      var startTime = Date.now();
+
+      function animateJump() {
+        var elapsedTime = Date.now() - startTime;
+        var progress = elapsedTime / jumpDuration;
+
+        if (progress >= 1) {
+          // 점프 완료 후 원래 자리로 돌아오기
+          image.style.top = originalTop + "px";
+          isJumping = false;
+          return;
+        }
+
+        // 점프 중인 경우 이미지를 위로 이동시키기
+        var jumpStep = Math.sin(progress * Math.PI) * jumpHeight;
+        image.style.top = originalTop - jumpStep + "px";
+
+        requestAnimationFrame(animateJump);
+      }
+
+      animateJump();
+    }
 
     function toggleDanceMove() {
       if (isLeftMove) {
@@ -110,11 +168,19 @@
       isLeftMove = !isLeftMove;
     }
 
+    leftImage.style.display = "none";
+
     document.addEventListener("keydown", function(event) {
       if (event.key === "ArrowLeft") {
         toggleDanceMove();
       } else if (event.key === "ArrowRight") {
         toggleDanceMove();
+      } else if (event.key === "ArrowUp") {
+        if (isLeftMove) {
+          jump(leftImage);
+        } else {
+          jump(rightImage);
+        }
       }
 
       // 아무 키보드를 누르면 모든 음악 재생
