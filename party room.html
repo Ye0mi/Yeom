@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>음악 리믹스</title>
+  <style>
+    .slider {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    
+    #danceMoves {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .left {
+      transform: scaleX(-1);
+    }
+  </style>
+</head>
+<body>
+  <h1>음악 리믹스</h1>
+
+  <label for="audio1">음악 1:</label>
+  <input type="range" class="slider" id="volume1" min="0" max="1" step="0.1" value="1">
+  <br>
+
+  <label for="audio2">음악 2:</label>
+  <input type="range" class="slider" id="volume2" min="0" max="1" step="0.1" value="1">
+  <br>
+
+  <label for="audio3">음악 3:</label>
+  <input type="range" class="slider" id="volume3" min="0" max="1" step="0.1" value="1">
+  <br>
+
+  <div id="danceMoves">
+    <img id="leftImage" src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjY3/MDAxNjg1NjQ2ODYwNzU2.aA942sI2_YEO-FEzI5LbgVljeLNAW6vexxxbl2KOItEg.Rq4Zn8RHxN_s6l6NgGqHHQLvzvoOsBxqN122hhtwrLsg.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_176.png?type=w773" alt="왼쪽 춤추는 사람">
+    <img id="rightImage" src="https://postfiles.pstatic.net/MjAyMzA2MDJfMjgx/MDAxNjg1NjQ0MDk2MzI0.tjJ9ZFS9lOZWUfvAb8ognPENVTw_Q4uKcSO5T_hPZcYg.pcIvkB0eJpKQXuzFFTEDWCnJLo9ZZXTnqQIfTb1AsZ0g.PNG.yeomsw0612/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC_174.png?type=w773" alt="오른쪽 춤추는 사람">
+  </div>
+
+  <script>
+    // 슬라이더 요소 가져오기
+    var volumeSlider1 = document.getElementById("volume1");
+    var volumeSlider2 = document.getElementById("volume2");
+    var volumeSlider3 = document.getElementById("volume3");
+
+    // 오디오 요소 가져오기
+    var audio1 = new Audio("Happy Cat.mp3");
+    var audio2 = new Audio("maxwell.mp3");
+    var audio3 = new Audio("capi.mp3");
+
+    // 초기화 후 음악 재생
+    audio1.addEventListener("canplaythrough", function() {
+      audio1.loop = true;
+    });
+
+    audio2.addEventListener("canplaythrough", function() {
+      audio2.loop = true;
+    });
+
+    audio3.addEventListener("canplaythrough", function() {
+      audio3.loop = true;
+    });
+
+    // 슬라이더 이벤트 핸들러 등록
+    volumeSlider1.addEventListener("input", function() {
+      audio1.volume = volumeSlider1.value;
+    });
+
+    volumeSlider2.addEventListener("input", function() {
+      audio2.volume = volumeSlider2.value;
+    });
+
+    volumeSlider3.addEventListener("input", function() {
+      audio3.volume = volumeSlider3.value;
+    });
+
+    // 춤을 추는 모션
+    var leftImage = document.getElementById("leftImage");
+    var rightImage = document.getElementById("rightImage");
+    var isLeftMove = true;
+
+    function toggleDanceMove() {
+      if (isLeftMove) {
+        leftImage.style.display = "none";
+        rightImage.style.display = "block";
+      } else {
+        leftImage.style.display = "block";
+        rightImage.style.display = "none";
+      }
+
+      isLeftMove = !isLeftMove;
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "ArrowLeft") {
+        toggleDanceMove();
+      } else if (event.key === "ArrowRight") {
+        toggleDanceMove();
+      }
+    });
+
+    // 사용자 코드
+  </script>
+</body>
+</html>

@@ -93,6 +93,15 @@
 			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
 		}
 
+		.image-container4 img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(7%, 50%); /* 이미지 중앙 정렬 */
+			width: 500px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+		}
+
 		.button-overlay {
 			position: absolute; /* 버튼을 컨테이너에 대해 절대적 위치로 설정 */
 			top: 0;
@@ -103,7 +112,7 @@
 		.date-container {
 			position: absolute;
 			top: -40px;
-			right: 470px;
+			right: 480px;
 			font-family: 'Rubik Puddles', sans-serif;
 
 			font-size: 60px;
@@ -137,21 +146,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik Puddles&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
 
+<div class="image-container">
+  <a href="cake.html">
+    <img src="images/cake.png">
+  </a>
+</div>
 
-	<div class="image-container">
-		 <a href="cake.html">
-		<img src="images/cake.png">
-			
-		</div>
+<div class="image-container2">
+  <a href="bdaycam.html">
+    <img src="images/camera.png" alt="두 번째 이미지">
+  </a>
+</div>
 
-		</div>
-  	<div class="image-container2">
-    	<a href="bdaycam.html">
-	      <img src="images/camera.png" alt="두 번째 이미지">
-	    </a>
-	   
-  
-	</div>
+<div class="image-container4">
+  <a href="party room.html">
+    <img src="images/camera.png" alt="세 번째 이미지">
+  </a>
+</div>
 
 	<div class="date-container">
 		<h1>Happy <br> Birthday</h1>
@@ -161,7 +172,7 @@
 
 		<script>
 
-			*/var today = new Date();
+			var today = new Date();
 			var date = today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();
 			document.write(date);
 		</script>
