@@ -1,200 +1,176 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Internal Links</title>
-	<style>
-		body {
-			background-color: white;
-			transition: background-color 1s;
-			position: relative; /* 부모 요소에 대해 상대적 위치 지정 */
-		}
-		
-		.image-container {
-			position: relative; /* 레이어로 사용될 컨테이너에 대해 상대적 위치 지정 */
-			display: inline-block; /* 컨테이너를 인라인 블록으로 설정하여 이미지 크기에 맞추기 */
-		}
-		
-
-		.gif-container img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-170%, 140%); /* 이미지 중앙 정렬 */
-			width: 260px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-			z-index: 2;
-
-
-		}
-
-		.gif-container2 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-90%, 140%); /* 이미지 중앙 정렬 */
-			width: 260px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-			z-index: 2;
-
-
-		}
-
-		.gif-container3 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-10%, 140%); /* 이미지 중앙 정렬 */
-			width: 260px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-			z-index: 2;
-
-
-		}
-
-		.gif-container4 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(70%, 140%); /* 이미지 중앙 정렬 */
-			width: 260px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-			z-index: 2;
-
-
-		}
-		
-		.image-container img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(30%, 50%); /* 이미지 중앙 정렬 */
-			width: 400px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-		}
-
-		.image-container2 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(7%, 50%); /* 이미지 중앙 정렬 */
-			width: 860px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-		}
-		.image-container3 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(7%, 50%); /* 이미지 중앙 정렬 */
-			width: 30px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-		}
-
-		.image-container4 img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-120%, 350%); /* 이미지 중앙 정렬 */
-			width: 400px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-		}
-
-		.button-overlay {
-			position: absolute; /* 버튼을 컨테이너에 대해 절대적 위치로 설정 */
-			top: 0;
-			left: 0;
-			z-index: 1; /* 버튼을 이미지 위로 겹치도록 함 */
-		}
-
-		.date-container {
-			position: absolute;
-			top: -40px;
-			right: 480px;
-			font-family: 'Rubik Puddles', sans-serif;
-
-			font-size: 60px;
-			font-weight: lighter;
-			color: white;
-			text-align: center;
-		
-			z-index: 3;
-			
-			line-height: 0.9;
-		}
-
-		.date-container2 {
-			position: absolute;
-			top: 850px;
-			right: 370px;
-			font-family: 'Rubik Puddles', sans-serif;
-
-			font-size: 80px;
-			font-weight: bold;
-			color: deeppink;
-			text-align: center;
-			line-height: 0.7;
-			z-index: 3;
-		}
-
-		
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Links</title>
+  <style>
+    body {
+      background-color: white;
+      transition: background-color 1s;
+      position: relative;
+    }
+    
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .gif-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-55%, 90%);
+      width: 800px;
+      height: auto;
+      z-index: 2;
+    }
+    
+    .gif-container2 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-90%, 150%);
+      width: 260px;
+      height: auto;
+      z-index: 2;
+    }
+    
+    .gif-container3 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-10%, 150%);
+      width: 260px;
+      height: auto;
+      z-index: 2;
+    }
+    
+    .gif-container4 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(70%, 150%);
+      width: 260px;
+      height: auto;
+      z-index: 2;
+    }
+    
+    .image-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-5%, 40%);
+      width: 500px;
+      height: auto;
+    }
+    
+    .image-container2 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(88%, 90%);
+      width: 370px;
+      height: auto;
+    }
+    
+    .image-container3 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(7%, 60%);
+      width: 10px;
+      height: auto;
+    }
+    
+    .image-container4 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-100%, 220%);
+      width: 550px;
+      height: auto;
+    }
+    
+    .button-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    .date-container {
+      position: absolute;
+      top: 20px;
+      right: 612px;
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 60px;
+      font-weight: lighter;
+      color: white;
+      text-align: center;
+      z-index: 3;
+      line-height: 0.9;
+    }
+    
+    .date-container2 {
+      position: absolute;
+      top: 755px;
+      right: 840px;
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: lightgreen;
+      text-align: center;
+      line-height: 0.7;
+      z-index: 3;
+    }
+  </style>
 </head>
 <body onload="changeBackgroundColor()">
-<link href="https://fonts.googleapis.com/css2?family=Rubik Puddles&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-
-<div class="image-container">
-  <a href="cake.html">
-    <img src="images/cake7.png">
-  </a>
-</div>
-
-<div class="image-container2">
-  <a href="bdaycam.html">
-    <img src="images/camera.png" alt="두 번째 이미지">
-  </a>
-</div>
-
-<div class="image-container4">
-  <a href="party room.html">
-    <img src="images/party.png" alt="세 번째 이미지">
-  </a>
-</div>
-
-	<div class="date-container">
-		<h1>Happy <br> Birthday</h1>
-		</div>
-
-	<div class="date-container2">
-
-		<script>
-
-			var today = new Date();
-			var date = today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();
-			document.write(date);
-		</script>
-	</div>
-
-
-
-	<div class="gif-container">
-		<img src="images/clap.gif" alt="Your GIF">
-	</div>
-	<div class="gif-container2">
-		<img src="images/clap.gif" alt="Your GIF">
-	</div>
-	<div class="gif-container3">
-		<img src="images/clap.gif" alt="Your GIF">
-	</div><div class="gif-container4">
-		<img src="images/clap.gif" alt="Your GIF">
-	</div>
-
-
-	<script>
-		function goToLink(linkId) {
+  <link href="https://fonts.googleapis.com/css2?family=Rubik Puddles&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  
+  <div class="image-container">
+    <a href="cake.html">
+      <img src="images/smallcake.png" id="cake-image" onmouseover="changeImage('cake-image', 'images/bigcake.png')" onmouseout="changeImage('cake-image', 'images/smallcake.png')">
+    </a>
+  </div>
+  
+  <div class="image-container2">
+    <a href="bdaycam.html">
+      <img src="images/smallcam.png" alt="두 번째 이미지" id="camera-image" onmouseover="changeImage('camera-image', 'images/bigphoto.png')" onmouseout="changeImage('camera-image', 'images/smallcam.png')">
+    </a>
+  </div>
+  
+  <div class="image-container4">
+    <a href="party room.html">
+      <img src="images/smallparty.png" alt="세 번째 이미지" id="party-image" onmouseover="changeImage('party-image', 'images/bigparty.png')" onmouseout="changeImage('party-image', 'images/smallparty.png')">
+    </a>
+  </div>
+  
+  <div class="date-container">
+    <h1>Happy <br> Birthday</h1>
+  </div>
+  
+  <div class="date-container2">
+    <script>
+      var today = new Date();
+      var date = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
+      document.write(date);
+    </script>
+  </div>
+  
+  <div class="gif-container">
+    <img src="images/clap3.gif" alt="Your GIF">
+  </div>
+  
+  <script>
+    function changeImage(imageId, newImageUrl) {
+      var image = document.getElementById(imageId);
+      image.src = newImageUrl;
+    }
+    
+    function goToLink(linkId) {
       switch (linkId) {
         case 'link1':
           window.location.href = "cake.html";
@@ -204,12 +180,12 @@
           break;
         default:
           break;
-			}
-		}
-
-		function changeBackgroundColor() {
-			document.body.style.backgroundColor = "black";
-		}
-	</script>
+      }
+    }
+    
+    function changeBackgroundColor() {
+      document.body.style.backgroundColor = "black";
+    }
+  </script>
 </body>
 </html>

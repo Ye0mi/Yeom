@@ -22,7 +22,7 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-14%, -35%);
+			transform: translate(1%, -35%);
 			width: 1000px; /* 이미지의 가로 크기 조정 */
 			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
 		}
@@ -48,7 +48,7 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-89%, -210%); /* 이미지 중앙 정렬 */
+			transform: translate(-90%, -210%); /* 이미지 중앙 정렬 */
 			width: 150px; /* 이미지의 가로 크기 조정 */
 			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
 			z-index: 2;
@@ -58,7 +58,7 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(200%, -1000%);
 			color: white;
 			font-size: 24px;
 			z-index: 3;
@@ -69,7 +69,7 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, 30%);
+			transform: translate(0%, -1000%);
 			z-index: 3;
 			display: none;
 		}
@@ -78,7 +78,7 @@
 			position: absolute;
 			top: 60%;
 			left: 60%;
-			transform: translate(-50%, -50%);
+			transform: translate(-30%, -1465%);
 			z-index: 3;
 			display: none;
 		}
@@ -92,19 +92,42 @@
 			display: none;
 		}
 
+		 .date-container {
+      position: absolute;
+      top: 150px;
+      right: 310px;
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 20px;
+      font-weight: lighter;
+      color: white;
+      text-align: center;
+      z-index: 3;
+      line-height: 0.9;
+    }
+
+
+
 	</style>
 </head>
 <body>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
+	<div class="date-container">
+    <h1>Blow out the candles &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on the cake and make a wish</h1>
+  </div>
+
 	<div class="gif-container">
 		<img src="images/fire.gif" alt="Your GIF" id="gifImage">
-		<div class="overlay-message" id="message">Make a birthday wish</div>
+		<div class="overlay-message" id="message"></div>
 		<input type="text" class="wish-input" id="wishInput">
 		<button class="confirm-button" id="confirmButton">Confirm</button>
 	</div>
 	<div id="cincopa_7c5258">...</div>
 
 	<div class="container">
-		<img src="images/cakecake.png" alt="Heart Image" class="image-overlay">
+		<img src="images/cake77.png" alt="Heart Image" class="image-overlay">
 	</div>
 	<canvas id="canvas" style="display: none;"></canvas>
 
@@ -135,7 +158,7 @@
 			const email = prompt("Please enter your email:");
 			const subject = "My Birthday Wish (" + currentDate + ")";
 
-			const body = " [ " +"My birthday wish in " + currentDate + " ] " + wish;
+			const body = "‧₊˚.⋆·ฺ.∗̥✩⁺˚" + " [ "  +"My birthday wish in " + currentDate + " ] "+ "*｡.⋆·ฺᐝ.∗̥⁺˚" + wish;
 
 			// Use an email sending service or your own server-side code to send the email
 			// Example using the `mailto` URL scheme

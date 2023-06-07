@@ -3,31 +3,89 @@
 <head>
   <title>음악 리믹스</title>
   <style>
-    body {
+    body 
+
+    {
       background-color: black;
     }
 
     .letter {
-      position: relative;
+      position: absolute;
       font-family: 'Rubik Puddles', sans-serif;
       font-size: 20px;
       font-weight: lighter;
-      color: royalblue;
+      color: whitesmoke;
       text-align: left;
       z-index: 0;
       line-height: 0.9;
-    }
-
-    .slider {
-      width: 200px;
-      margin-bottom: 10px;
+      transform: translate(38%, -20%);
       z-index: 3;
-      transform: translate(13%, -10%);
-
     }
 
+     .drum{
+      position: absolute;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 8px;
+      font-weight: lighter;
+      color: white;
+      text-align: center;
+      z-index: 4;
+      line-height: 2.3;
+      transform: translate(770%, 159%);
+    }
 
-    
+    .letter2 {
+      position: relative;
+      font-family: 'Montserrat+Alternates', sans-serif;
+      font-size: 20px;
+      font-weight: lighter;
+      color: black;
+      text-align: left;
+      z-index: 1;
+      line-height: 1.2;
+    }
+    .slider {
+  width: 500px;
+
+  margin-bottom: 20px;
+  position: relative;
+  transform: translate(120%, 685%);
+  border-radius: 0px;
+  background: linear-gradient(to right, white 0%, white 100%); /* 채워지지 않았을 때 흰색 */
+  z-index: 3;
+
+}
+
+.slider::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white; /* 썸네일의 배경색 설정 */
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white; /* 썸네일의 배경색 설정 */
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white; /* 썸네일의 배경색 설정 */
+  border-radius: 50%;
+  z-index: 3;
+}
+
+
+.slider::-webkit-slider-runnable-track {
+  background-color: grey; /* 채워진 부분의 배경색 설정 */
+  z-index: 3;
+}
+
     #danceMoves {
       position: relative;
       width: 200px;
@@ -42,7 +100,7 @@
       position: absolute;
       top: 50%;
       left: calc(50% + 20px);
-      transform: translate(13%, -10%);
+      transform: translate(33%, 49%);
     }
 
     .left {
@@ -55,20 +113,54 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-54%, 0%);
-      width: 900px;
+      transform: translate(-53%, -10%);
+      width: 1200px;
       height: auto;
       z-index: 1;
+    }
+
+    .light img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-48%, -35%);
+      width: 1400px;
+      height: 1500;
+      z-index: 0;
+      opacity:0.5;
     }
   </style>
 </head>
 <body>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
+<div class="drum">
+    <h1> [ Drum ]  <br> [  Bass ] <br> [ Melod ] </h1>
+
+     </div>
+
+     <div class="bass">
+    <h1> < Bass > <br></h1>
+
+     </div>
+
+     <div class="melody">
+    <h1> < Melody > <br></h1>
+
+     </div>
+
+
+
 
   <div class="letter">
-    <h1>press left or right or up key<br></h1>
-  </div>
+    <h1> To enjoy the party,&nbsp;&nbsp;&nbsp;please press the arrow keys  <br></h1>
 
-  <label for="audio1">음악 1:</label>
+     </div>
+ 
+<div class="letter2">
+  <label for="audio1">음악  1:</label>
   <input type="range" class="slider" id="volume1" min="0" max="1" step="0.1" value="1">
   <br>
 
@@ -80,14 +172,20 @@
   <input type="range" class="slider" id="volume3" min="0" max="1" step="0.1" value="1">
   <br>
 
+   </div>
+
   <div class="stage">
-    <img src="images/ground.png" alt="두 번째 이미지">
+    <img src="images/stage3.png" alt="두 번째 이미지">
+  </div>
+
+  <div class="light">
+    <img src="images/light.gif" alt="두 번째 이미지">
   </div>
   
   
   <div id="danceMoves">
-    <img id="leftImage" class="danceImage" src="images/left4.png" alt="왼쪽 춤추는 사람">
-    <img id="rightImage" class="danceImage" src="images/right4.png" alt="오른쪽 춤추는 사람">
+    <img id="leftImage" class="danceImage" src="images/left7.png" alt="왼쪽 춤추는 사람">
+    <img id="rightImage" class="danceImage" src="images/right7.png" alt="오른쪽 춤추는 사람">
   </div>
 
   <script>
