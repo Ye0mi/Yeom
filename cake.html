@@ -6,7 +6,6 @@
 	<title>Camera</title>
 	<link rel="stylesheet" href="/assets2/styles.css">
 	<style>
-
 		body {
 			background-color: black;
 		}
@@ -23,8 +22,8 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-2%, -35%);
-			width: 650px; /* 이미지의 가로 크기 조정 */
+			transform: translate(-14%, -35%);
+			width: 1000px; /* 이미지의 가로 크기 조정 */
 			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
 		}
 
@@ -45,23 +44,103 @@
 			display: none;
 		}
 
+		.gif-container img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-89%, -210%); /* 이미지 중앙 정렬 */
+			width: 150px; /* 이미지의 가로 크기 조정 */
+			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			z-index: 2;
+		}
+
+		.overlay-message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			font-size: 24px;
+			z-index: 3;
+			display: none;
+		}
+
+		.wish-input {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 30%);
+			z-index: 3;
+			display: none;
+		}
+
+		.confirm-button {
+			position: absolute;
+			top: 60%;
+			left: 60%;
+			transform: translate(-50%, -50%);
+			z-index: 3;
+			display: none;
+		}
+
+		.overlay-message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -600%);
+			z-index: 3;
+			display: none;
+		}
 
 	</style>
 </head>
 <body>
-
+	<div class="gif-container">
+		<img src="images/fire.gif" alt="Your GIF" id="gifImage">
+		<div class="overlay-message" id="message">Make a birthday wish</div>
+		<input type="text" class="wish-input" id="wishInput">
+		<button class="confirm-button" id="confirmButton">Confirm</button>
+	</div>
 	<div id="cincopa_7c5258">...</div>
 
 	<div class="container">
-	
-	
-		<img src="images/wholecake.png" alt="Heart Image" class="image-overlay">
+		<img src="images/cakecake.png" alt="Heart Image" class="image-overlay">
 	</div>
 	<canvas id="canvas" style="display: none;"></canvas>
 
-	
 	<script>
-		
+		const gifImage = document.getElementById("gifImage");
+		const message = document.getElementById("message");
+		const wishInput = document.getElementById("wishInput");
+		const confirmButton = document.getElementById("confirmButton");
+		const currentDate = new Date().toLocaleDateString();
+
+		gifImage.addEventListener("mouseenter", () => {
+			gifImage.style.display = "none";
+			message.style.display = "block";
+			wishInput.style.display = "block";
+			confirmButton.style.display = "block";
+		});
+
+		confirmButton.addEventListener("click", () => {
+			message.style.display = "none";
+			wishInput.style.display = "none";
+			confirmButton.style.display = "none";
+			gifImage.style.display = "block";
+			sendEmail(wishInput.value);
+			wishInput.value = ""; // Clear the wish input field
+		});
+
+		function sendEmail(wish) {
+			const email = prompt("Please enter your email:");
+			const subject = "My Birthday Wish (" + currentDate + ")";
+
+			const body = " [ " +"My birthday wish in " + currentDate + " ] " + wish;
+
+			// Use an email sending service or your own server-side code to send the email
+			// Example using the `mailto` URL scheme
+			window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+		}
 	</script>
 </body>
 </html>

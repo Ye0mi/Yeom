@@ -3,63 +3,67 @@
 <head>
   <title>음악 리믹스</title>
   <style>
-    .slider {
-      width: 200px;
-      margin-bottom: 10px;
-    }
-    
-    #danceMoves {
-    position: relative; /* 부모 요소를 상대 위치로 설정 */
-    width: 200px;
-    height: 200px;
-    transform: translate(100%, 100%);
-  }
-
-  #leftImage,
-  #rightImage {
-    width: 100px;
-    height: auto;
-    z-index: 3;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(100%, 100%);
-  }
-
-     #leftImage,
-  #rightImage {
-    width: 100px;
-    height: auto;
-    z-index: 3;
-    position: absolute;
-    top: 50%;
-    left: calc(50% + 20px); /* 수정된 부분 */
-    transform: translate(-50%, -50%);
-  }
-
-    
-    .left {
-      transform: scaleX(-1);
+    body {
+      background-color: black;
     }
 
     .letter {
       position: relative;
-    
       font-family: 'Rubik Puddles', sans-serif;
-
       font-size: 20px;
       font-weight: lighter;
       color: royalblue;
       text-align: left;
-    
       z-index: 0;
-      
       line-height: 0.9;
+    }
+
+    .slider {
+      width: 200px;
+      margin-bottom: 10px;
+      z-index: 3;
+      transform: translate(13%, -10%);
+
+    }
+
+
+    
+    #danceMoves {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    #leftImage,
+    #rightImage {
+      width: 900px;
+      height: auto;
+      z-index: 3;
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 20px);
+      transform: translate(13%, -10%);
+    }
+
+    .left {
+      transform: scaleX(-1);
+    }
+
+    
+
+    .stage img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-54%, 0%);
+      width: 900px;
+      height: auto;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  
+
   <div class="letter">
     <h1>press left or right or up key<br></h1>
   </div>
@@ -76,9 +80,14 @@
   <input type="range" class="slider" id="volume3" min="0" max="1" step="0.1" value="1">
   <br>
 
+  <div class="stage">
+    <img src="images/ground.png" alt="두 번째 이미지">
+  </div>
+  
+  
   <div id="danceMoves">
-    <img id="leftImage" class="danceImage" src="images/left.png" alt="왼쪽 춤추는 사람">
-    <img id="rightImage" class="danceImage" src="images/right.png" alt="오른쪽 춤추는 사람">
+    <img id="leftImage" class="danceImage" src="images/left4.png" alt="왼쪽 춤추는 사람">
+    <img id="rightImage" class="danceImage" src="images/right4.png" alt="오른쪽 춤추는 사람">
   </div>
 
   <script>
@@ -88,9 +97,9 @@
     var volumeSlider3 = document.getElementById("volume3");
 
     // 오디오 요소 가져오기
-    var audio1 = new Audio("Happy Cat.mp3");
-    var audio2 = new Audio("maxwell.mp3");
-    var audio3 = new Audio("capi.mp3");
+    var audio1 = new Audio("drum.m4a");
+    var audio2 = new Audio("bass.m4a");
+    var audio3 = new Audio("melody.m4a");
 
     // 초기화 후 음악 반복 재생
     audio1.addEventListener("canplaythrough", function() {
@@ -130,8 +139,8 @@
       if (isJumping) return;
 
       isJumping = true;
-      var jumpHeight = 100; // 점프 높이 (픽셀 단위)
-      var jumpDuration = 500; // 점프 지속 시간 (밀리초 단위)
+      var jumpHeight = 100;
+      var jumpDuration = 500;
 
       var startTime = Date.now();
 
@@ -140,13 +149,11 @@
         var progress = elapsedTime / jumpDuration;
 
         if (progress >= 1) {
-          // 점프 완료 후 원래 자리로 돌아오기
           image.style.top = originalTop + "px";
           isJumping = false;
           return;
         }
 
-        // 점프 중인 경우 이미지를 위로 이동시키기
         var jumpStep = Math.sin(progress * Math.PI) * jumpHeight;
         image.style.top = originalTop - jumpStep + "px";
 
@@ -183,7 +190,6 @@
         }
       }
 
-      // 아무 키보드를 누르면 모든 음악 재생
       audio1.play();
       audio2.play();
       audio3.play();

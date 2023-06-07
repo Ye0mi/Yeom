@@ -22,9 +22,20 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-16%, -35%);
-            width: 900px; /* 이미지의 가로 크기 조정 */
+            transform: translate(-25%, -37%);
+            width: 1400px; /* 이미지의 가로 크기 조정 */
             height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+        }
+
+        .gif-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-60%, 20%);
+            width: 140px; /* 이미지의 가로 크기 조정 */
+            height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+
+            z-index: 3;
         }
 
         .container {
@@ -51,12 +62,16 @@
     <div class="container">
         <video id="video" width="800" height="600" autoplay></video>
         <button id="captureBtn" onclick="capture()">Capture</button>
-        <img src="images/frame.png" alt="Heart Image" class="image-overlay">
+        <img src="images/frame6.png" alt="Heart Image" class="image-overlay">
     </div>
     <canvas id="canvas" style="display: none;"></canvas>
 
     <script src="/assets2/script.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <div class="gif-container">
+        <img src="images/fire.gif" alt="Your GIF">
+    </div>
 
     <script>
         const videoElement = document.getElementById("video");
