@@ -8,122 +8,131 @@
     body {
       background-color: white;
       transition: background-color 1s;
-      position: relative;
+      position: fixed;
     }
     
     .image-container {
-      position: relative;
+      position: fixed;
       display: inline-block;
+      top: 50%;
+      left: 13%;
+      transform: translate(-50%, -50%);
     }
     
     .gif-container img {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-55%, 90%);
+      transform: translate(-50%, -50%);
       width: 800px;
       height: auto;
+      display: inline-block;
       z-index: 2;
     }
     
     .gif-container2 img {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-90%, 150%);
+      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
     }
     
     .gif-container3 img {
-      position: absolute;
+      
       top: 50%;
       left: 50%;
-      transform: translate(-10%, 150%);
+      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
     }
     
     .gif-container4 img {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(70%, 150%);
+      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
     }
     
     .image-container img {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-5%, 40%);
+      transform: translate(-50%, -50%);
       width: 500px;
       height: auto;
     }
     
     .image-container2 img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(88%, 90%);
+      position: fixed;
+      top: 60%;
+      left: 85%;
+      transform: translate(-58%, -50%);
       width: 370px;
       height: auto;
     }
     
     .image-container3 img {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(7%, 60%);
+      transform: translate(-50%, -50%);
       width: 10px;
       height: auto;
     }
     
     .image-container4 img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-100%, 220%);
+      position: fixed;
+      top: 83%;
+      left: 40%;
+      transform: translate(-50%, -50%);
       width: 550px;
       height: auto;
     }
     
     .button-overlay {
-      position: absolute;
+      position: fixed;
+      transform: translate(-50%, -50%);
       top: 0;
       left: 0;
       z-index: 1;
     }
     
     .date-container {
-      position: absolute;
-      top: 20px;
-      right: 612px;
-      font-family: 'Rubik Puddles', sans-serif;
-      font-size: 60px;
-      font-weight: lighter;
-      color: white;
-      text-align: center;
-      z-index: 3;
-      line-height: 0.9;
-    }
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Rubik Puddles', sans-serif;
+  font-size: 60px;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  z-index: 3;
+  line-height: 0.9;
+}
+
     
     .date-container2 {
-      position: absolute;
-      top: 755px;
-      right: 840px;
-      font-family: 'Rubik Puddles', sans-serif;
-      font-size: 30px;
-      font-weight: bold;
-      color: lightgreen;
-      text-align: center;
-      line-height: 0.7;
-      z-index: 3;
-    }
+  position: fixed;
+  bottom: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Rubik Puddles', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: lightgreen;
+  text-align: center;
+  line-height: 0.7;
+  z-index: 3;
+}
+
   </style>
 </head>
 <body onload="changeBackgroundColor()">
