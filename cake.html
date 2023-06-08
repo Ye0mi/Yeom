@@ -110,6 +110,21 @@
 	</style>
 </head>
 <body>
+
+	<body onclick="playBackgroundAudio()">
+
+	<audio id="backgroundAudio" src="/Music/Happy birthday.mp3" autoplay loop></audio>
+
+	<script>
+  function playBackgroundAudio() {
+    const backgroundAudio = document.getElementById("backgroundAudio");
+    backgroundAudio.play();
+    // 이벤트가 한 번만 발생하도록 클릭 이벤트 리스너를 제거합니다.
+    document.body.removeEventListener("click", playBackgroundAudio);
+  }
+</script>
+
+
 	<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
@@ -130,6 +145,7 @@
 		<img src="images/cake77.png" alt="Heart Image" class="image-overlay">
 	</div>
 	<canvas id="canvas" style="display: none;"></canvas>
+
 
 	<script>
 		const gifImage = document.getElementById("gifImage");
