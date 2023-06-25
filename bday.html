@@ -10,92 +10,76 @@
       transition: background-color 1s;
       position: fixed;
     }
-    
-    .image-container {
-      position: fixed;
-      display: inline-block;
-      top: 50%;
-      left: 13%;
-      transform: translate(-50%, -50%);
-    }
-    
-    .gif-container img {
+
+    .container {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-46%, -50%);
+    }
+
+    .image-container {
+      display: inline-block;
+    }
+
+    .gif-container img {
       width: 800px;
       height: auto;
       display: inline-block;
       z-index: 2;
+      transform: translate(-5%, -150%);
+
+
+
     }
-    
+
     .gif-container2 img {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
+      transform: translate(-50%, -550%);
     }
-    
+
     .gif-container3 img {
-      
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
+      transform: translate(-50%, -50%);
     }
-    
+
     .gif-container4 img {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       width: 260px;
       height: auto;
       z-index: 2;
-    }
-    
-    .image-container img {
-      position: fixed;
-      top: 50%;
-      left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    .image-container img {
       width: 500px;
       height: auto;
+      transform: translate(-100%, 130%);
+
+      
     }
-    
+
     .image-container2 img {
-      position: fixed;
-      top: 60%;
-      left: 85%;
-      transform: translate(-58%, -50%);
       width: 370px;
       height: auto;
+      transform: translate(200%, 63%);
     }
-    
+
     .image-container3 img {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       width: 10px;
       height: auto;
+      transform: translate(30%, 30%);
     }
-    
+
     .image-container4 img {
-      position: fixed;
-      top: 83%;
-      left: 40%;
-      transform: translate(-50%, -50%);
       width: 550px;
       height: auto;
+      transform: translate(-30%, 28%);
     }
-    
+
     .button-overlay {
       position: fixed;
       transform: translate(-50%, -50%);
@@ -103,82 +87,84 @@
       left: 0;
       z-index: 1;
     }
-    
+
     .date-container {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Rubik Puddles', sans-serif;
-  font-size: 60px;
-  font-weight: lighter;
-  color: white;
-  text-align: center;
-  z-index: 3;
-  line-height: 0.9;
-}
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 60px;
+      font-weight: lighter;
+      color: white;
+      text-align: center;
+      z-index: 3;
+      line-height: 0.9;
+      transform: translate(-50%, -5%);
+    }
 
-    
     .date-container2 {
-  position: fixed;
-  bottom: 220px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Rubik Puddles', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: lightgreen;
-  text-align: center;
-  line-height: 0.7;
-  z-index: 3;
-}
-
+      position: fixed;
+      bottom: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: lightgreen;
+      text-align: center;
+      line-height: 0.7;
+      z-index: 3;
+      transform: translate(-65%, -1045%);
+    }
   </style>
 </head>
 <body onload="changeBackgroundColor()">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik Puddles&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-  
-  <div class="image-container">
-    <a href="cake.html">
-      <img src="images/smallcake.png" id="cake-image" onmouseover="changeImage('cake-image', 'images/bigcake.png')" onmouseout="changeImage('cake-image', 'images/smallcake.png')">
-    </a>
+
+  <div class="container">
+    <div class="image-container">
+      <a href="cake.html">
+        <img src="images/smallcake.png" id="cake-image" onmouseover="changeImage('cake-image', 'images/bigcake.png')" onmouseout="changeImage('cake-image', 'images/smallcake.png')">
+      </a>
+    </div>
+
+    <div class="image-container2">
+      <a href="bdaycam.html">
+        <img src="images/smallcam.png" alt="두 번째 이미지" id="camera-image" onmouseover="changeImage('camera-image', 'images/bigphoto.png')" onmouseout="changeImage('camera-image', 'images/smallcam.png')">
+      </a>
+    </div>
+
+    <div class="image-container4">
+      <a href="party room.html">
+        <img src="images/smallparty.png" alt="세 번째 이미지" id="party-image" onmouseover="changeImage('party-image', 'images/bigparty.png')" onmouseout="changeImage('party-image', 'images/smallparty.png')">
+      </a>
+    </div>
+
+    <div class="date-container">
+      <h1>Happy <br> Birthday</h1>
+    </div>
+
+    <div class="date-container2">
+      <script>
+        var today = new Date();
+        var date = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
+        document.write(date);
+      </script>
+    </div>
+
+    <div class="gif-container">
+      <img src="images/clap3.gif" alt="Your GIF">
+    </div>
   </div>
-  
-  <div class="image-container2">
-    <a href="bdaycam.html">
-      <img src="images/smallcam.png" alt="두 번째 이미지" id="camera-image" onmouseover="changeImage('camera-image', 'images/bigphoto.png')" onmouseout="changeImage('camera-image', 'images/smallcam.png')">
-    </a>
-  </div>
-  
-  <div class="image-container4">
-    <a href="party room.html">
-      <img src="images/smallparty.png" alt="세 번째 이미지" id="party-image" onmouseover="changeImage('party-image', 'images/bigparty.png')" onmouseout="changeImage('party-image', 'images/smallparty.png')">
-    </a>
-  </div>
-  
-  <div class="date-container">
-    <h1>Happy <br> Birthday</h1>
-  </div>
-  
-  <div class="date-container2">
-    <script>
-      var today = new Date();
-      var date = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
-      document.write(date);
-    </script>
-  </div>
-  
-  <div class="gif-container">
-    <img src="images/clap3.gif" alt="Your GIF">
-  </div>
-  
+
   <script>
     function changeImage(imageId, newImageUrl) {
       var image = document.getElementById(imageId);
       image.src = newImageUrl;
     }
-    
+
     function goToLink(linkId) {
       switch (linkId) {
         case 'link1':
@@ -191,7 +177,7 @@
           break;
       }
     }
-    
+
     function changeBackgroundColor() {
       document.body.style.backgroundColor = "black";
     }

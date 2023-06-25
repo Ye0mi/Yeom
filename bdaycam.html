@@ -10,10 +10,18 @@
             background-color: black;
         }
 
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 600px;
+        }
+
         #video {
             width: 100%;
             height: auto;
-            transform: translate(60%, 25%);
             max-width: 100%;
             max-height: 100%;
         }
@@ -22,7 +30,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-9%, -30%);
+            transform: translate(-47%, -55%);
             width: 1200px; /* 이미지의 가로 크기 조정 */
             height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
         }
@@ -31,10 +39,9 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-70%, 45%);
+            transform: translate(-37%, 45%);
             width: 100px; /* 이미지의 가로 크기 조정 */
             height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-
             z-index: 3;
         }
 
@@ -46,14 +53,7 @@
             width: 1500px; /* 이미지의 가로 크기 조정 */
             height: auto;
             opacity: 0; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-
-            z-index: 3;
-        }
-
-        .container {
-            position: relative;
-            width: 800px;
-            height: 600px;
+            z-index: 4;
         }
 
         .image-overlay {
@@ -67,18 +67,18 @@
             display: none;
         }
 
-         .date-container2 {
-          position: absolute;
-          top: 280px;
-          right: 879px;
-          font-family: 'Montserrat+Alternates', sans-serif;
-          font-size: 20px;
-          font-weight: lighter;
-          color: grey;
-          text-align: center;
-          line-height: 0.7;
-          z-index: 3;
-          opacity: 0.8;
+        .date-container2 {
+            position: absolute;
+            top: 280px;
+            right: 879px;
+            font-family: 'Montserrat+Alternates', sans-serif;
+            font-size: 20px;
+            font-weight: lighter;
+            color: grey;
+            text-align: center;
+            line-height: 0.7;
+            z-index: 3;
+            opacity: 0.8;
         }
 
     </style>
@@ -87,74 +87,69 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 
-<div class="date-container2">
-  <span id="date"></span>
+<div class="container">
+    <video id="video" width="800" height="600" autoplay></video>
+    <button id="captureBtn">
+        <img src="images/frame9.png" alt="Heart Image" class="image-overlay">
+    </button>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <div class="date-container2" style="position: absolute; top: 60px; right: 350px;">
+    <span id="date"></span>
+</div>
+</div>
+
+<div id="cincopa_7c5258">...</div>
+
+<script>
+
+    var today = new Date();
+    var date = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
+    document.getElementById("date").textContent = date;
+</script>
+
+<script src="/assets2/script.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<div class="gif-container">
+    <img src="images/fire.gif" alt="Your GIF">
+</div>
+
+<div class="gif-container2">
+    <img src="images/frameside2.gif" alt="Your GIF">
 </div>
 
 <script>
-  var today = new Date();
-  var date = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
-  document.getElementById("date").textContent = date;
+    const videoElement = document.getElementById("video");
+    const captureButton = document.getElementById("captureBtn");
+    const canvasElement = document.getElementById("canvas");
+    const canvasContext = canvasElement.getContext("2d");
+    const heartImage = new Image();
+
+    heartImage.src = "https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg"; // 하트 이미지 파일 경로
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+            videoElement.srcObject = stream;
+        })
+        .catch(function (error) {
+            console.error("Error accessing the camera: ", error);
+        });
+
+    function capture() {
+        canvasElement.width = videoElement.videoWidth;
+        canvasElement.height = videoElement.videoHeight;
+
+        canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+        canvasContext.drawImage(heartImage, 0, 0, canvasElement.width, canvasElement.height);
+
+        html2canvas(document.body).then(function (canvas) {
+            const picture = canvas.toDataURL("image/png");
+            const downloadLink = document.createElement("a");
+            downloadLink.href = picture;
+            downloadLink.download = "screenshot.png";
+            downloadLink.click();
+        });
+    }
 </script>
-
-    <div id="cincopa_7c5258">...</div>
-
-    <div class="container">
-        <video id="video" width="800" height="600" autoplay></video>
-        <button id="captureBtn" >
-        <img src="images/frame9.png" alt="Heart Image" class="image-overlay">
-    </div>
-    <canvas id="canvas" style="display: none;"></canvas>
-
-    <script src="/assets2/script.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-    <div class="gif-container">
-        <img src="images/fire.gif" alt="Your GIF">
-    </div>
-
-    <div class="gif-container2">
-        <img src="images/frameside2.gif" alt="Your GIF">
-    </div>
-
-   
-
-    <script>
-        const videoElement = document.getElementById("video");
-        const captureButton = document.getElementById("captureBtn");
-        const canvasElement = document.getElementById("canvas");
-        const canvasContext = canvasElement.getContext("2d");
-        const heartImage = new Image();
-
-        heartImage.src = "https://assets.allpngfree.com/storage/thumbnails/birthday-cake-png-thumbnail-1649280969.jpg"; // 하트 이미지 파일 경로
-
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                videoElement.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.error("Error accessing the camera: ", error);
-            });
-
-        function capture() {
-            canvasElement.width = videoElement.videoWidth;
-            canvasElement.height = videoElement.videoHeight;
-            
-            canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
-            canvasContext.drawImage(heartImage, 0, 0, canvasElement.width, canvasElement.height);
-            
-            html2canvas(document.body).then(function (canvas) {
-                const picture = canvas.toDataURL("image/png");
-                const downloadLink = document.createElement("a");
-                downloadLink.href = picture;
-                downloadLink.download = "screenshot.png";
-                downloadLink.click();
-            });
-        }
-
-
-
-    </script>
 </body>
 </html>
-

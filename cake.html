@@ -10,142 +10,122 @@
 			background-color: black;
 		}
 
-		#video {
-			width: 100%;
-			height: auto;
-			transform: translate(40%, 25%);
-			max-width: 100%;
-			max-height: 100%;
+		.container {
+			position: relative;
+			width: 800px;
+			height: 600px;
+			margin: 0 auto;
+
+			transform: translate(3%, 30%);
 		}
 
 		.container img {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(1%, -35%);
-			width: 1000px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
+			transform: translate(-50%, -50%);
+			width: 1000px;
+			height: auto;
 		}
 
-		.container {
-			position: relative;
-			width: 800px;
-			height: 600px;
-		}
-
-		.image-overlay {
+		.gif-container {
 			position: absolute;
-			top: 10px;
-			right: 10px;
-			z-index: 1;
-		}
-
-		.canvas {
-			display: none;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
 		}
 
 		.gif-container img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-90%, -210%); /* 이미지 중앙 정렬 */
-			width: 150px; /* 이미지의 가로 크기 조정 */
-			height: auto; /* 이미지의 세로 크기를 가로 크기에 맞게 자동 조정 */
-			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 150px;
+			height: auto;
+			transform: translate(-105%, -200%);
 		}
 
 		.overlay-message {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(200%, -1000%);
+			transform: translate(-50%, -50%);
 			color: white;
 			font-size: 24px;
 			z-index: 3;
 			display: none;
 		}
 
-		.wish-input {
+		
+
+		.date-container {
+      position: absolute;
+      font-family: 'Rubik Puddles', sans-serif;
+      font-size: 21px;
+      font-weight: lighter;
+      color: white;
+      text-align: center;
+      z-index: 4;
+      line-height: 1.2; /* 줄 간격을 1.2로 설정 */
+      transform: translate(-18%, -90%);
+      white-space: nowrap; /* 줄바꿈 방지 */
+    }
+
+    
+	
+
+    .wish-input {
 			position: absolute;
-			top: 50%;
+			top: 60%;
 			left: 50%;
-			transform: translate(0%, -1000%);
+			transform: translate(-5%, -900%);
 			z-index: 3;
 			display: none;
+			background-color: grey;
+
 		}
 
 		.confirm-button {
 			position: absolute;
-			top: 60%;
-			left: 60%;
-			transform: translate(-30%, -1465%);
-			z-index: 3;
-			display: none;
-		}
-
-		.overlay-message {
-			position: absolute;
-			top: 50%;
+			top: 70%;
 			left: 50%;
-			transform: translate(-50%, -600%);
+			transform: translate(250%, -900%);
 			z-index: 3;
 			display: none;
+			background-color: lightgreen;
 		}
-
-		 .date-container {
-      position: absolute;
-      top: 150px;
-      right: 310px;
-      font-family: 'Rubik Puddles', sans-serif;
-      font-size: 20px;
-      font-weight: lighter;
-      color: white;
-      text-align: center;
-      z-index: 3;
-      line-height: 0.9;
-    }
-
-
 
 	</style>
 </head>
-<body>
-
-	<body onclick="playBackgroundAudio()">
+<body onclick="playBackgroundAudio()">
 
 	<audio id="backgroundAudio" src="/Music/Happy birthday.mp3" autoplay loop></audio>
 
 	<script>
-  function playBackgroundAudio() {
-    const backgroundAudio = document.getElementById("backgroundAudio");
-    backgroundAudio.play();
-    // 이벤트가 한 번만 발생하도록 클릭 이벤트 리스너를 제거합니다.
-    document.body.removeEventListener("click", playBackgroundAudio);
-  }
-</script>
-
+		function playBackgroundAudio() {
+			const backgroundAudio = document.getElementById("backgroundAudio");
+			backgroundAudio.play();
+			document.body.removeEventListener("click", playBackgroundAudio);
+		}
+	</script>
 
 	<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 
-	<div class="date-container">
-    <h1>Blow out the candles &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on the cake and make a wish</h1>
-  </div>
-
-	<div class="gif-container">
-		<img src="images/fire.gif" alt="Your GIF" id="gifImage">
-		<div class="overlay-message" id="message"></div>
-		<input type="text" class="wish-input" id="wishInput">
-		<button class="confirm-button" id="confirmButton">Confirm</button>
-	</div>
-	<div id="cincopa_7c5258">...</div>
-
 	<div class="container">
+		<div class="gif-container">
+			<img src="images/fire.gif" alt="Your GIF" id="gifImage">
+			<div class="overlay-message" id="message"></div>
+			<input type="text" class="wish-input" id="wishInput">
+			<button class="confirm-button" id="confirmButton">Confirm</button>
+		</div>
+		<div class="date-container">
+			<h1>Blow out the candles &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on the cake and make a wish</h1>
+		</div>
 		<img src="images/cake77.png" alt="Heart Image" class="image-overlay">
 	</div>
 	<canvas id="canvas" style="display: none;"></canvas>
-
 
 	<script>
 		const gifImage = document.getElementById("gifImage");
@@ -167,17 +147,13 @@
 			confirmButton.style.display = "none";
 			gifImage.style.display = "block";
 			sendEmail(wishInput.value);
-			wishInput.value = ""; // Clear the wish input field
+			wishInput.value = "";
 		});
 
 		function sendEmail(wish) {
 			const email = prompt("Please enter your email:");
 			const subject = "My Birthday Wish (" + currentDate + ")";
-
-			const body = "‧₊˚.⋆·ฺ.∗̥✩⁺˚" + " [ "  +"My birthday wish in " + currentDate + " ] "+ "*｡.⋆·ฺᐝ.∗̥⁺˚" + wish;
-
-			// Use an email sending service or your own server-side code to send the email
-			// Example using the `mailto` URL scheme
+			const body = "‧₊˚.⋆·ฺ.∗̥✩⁺˚" + " [ " + "My birthday wish in " + currentDate + " ] " + "*｡.⋆·ฺᐝ.∗̥⁺˚" + wish;
 			window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 		}
 	</script>
