@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clickable Image</title>
+
+
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
+ <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+<style>
+  body{
+      background-color: white;
+      transition: background-color 1s;
+    
+    }
+
+
+
+
+  .paper img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-37%, -60%);
+      width: 300px;
+      height: auto;
+    }
+    .letter {
+      position: fixed;
+      font-family: 'Maison neuve', sans-serif;
+      font-size: 8px;
+      font-weight: lighter;
+      color: black;
+      text-align: right;
+      z-index: 0;
+      line-height: 2;
+      transform: translate(2%, 5%);
+    }
+
+
+
+    .paper img:hover {
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMjE1/MDAxNjg2MTc5NjE5Mzc3.ku08cRlDRPMD60zAwMYeCBhKqBvKgYUAhDDOleS5Y8wg.tVKJ9LuowUXADXFV_8xc2RzJSb_B1zQvW8X8YAeUp14g.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-54.png?type=w773");
+  }
+
+    .paper2 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-207%, -60%);
+      width: 300px;
+      height: auto;
+    }
+
+    .paper2 img:hover {
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMzYg/MDAxNjg2MTc5NjE5Njgw.c8XPWDM375aIY7fk5uCBPccyGdPVXXDuBcQuc5qV3JAg.0EGbFAYH6hWUNHYth5GiinWLLrkAk0IeOjbrReCxzmMg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-59.png?type=w773");
+  }
+    
+    .paper3 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-117%, 60%);
+      width: 360px;
+      height: auto;
+    }
+
+    .paper3 img:hover {
+      transform: translate(-117%, 0%);
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMzgg/MDAxNjg2MTc5NjE5ODc5.GZNhznplM-8kY7XmSjsGlfaRceOD2zO1HXwZFW-WsMAg.7F1WbGNlqryY1id-cEN_PTIGCgw28vnu4um-fsj7VDIg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-13-06.png?type=w773");
+  }
+
+    .paper4 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(117%, -70%);
+      width: 300px;
+      height: auto;
+    }
+
+    .paper4 img:hover {
+       transform: scale(0.9) translate(117%, -80%);
+
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMjEw/MDAxNjg2MTc5NjE5Njky.sYIDQd-mLd5TCvUgNYdlPg-Fz_w0Ng0fuZfpk6Q0decg.t-8u7hOE3lZ4GCJyf5Thk5c1jjbX-5TOXUyLqIMYkFYg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-56.png?type=w773");
+  }
+
+    .paper5 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(87%, -120%)rotate(50deg);;;;
+      width: 260px;
+      height: auto;
+    }
+
+    .paper5 img:hover {
+      transform: translate(87%, -120%)rotate(50deg);;;;
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMTAx/MDAxNjg2MTc5NjE5ODA2.qp8unS5FMR7h9YzxcH08W9jMS28F2ztNbW1wTBeVqV0g.NJ5QG7tvQLqrSarf8_CwoIkOUxnlrc4ihXWVeFwrAJ0g.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-13-03.png?type=w773");
+  }
+
+
+    .paper6 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-87%, 20%) rotate(145deg);
+      width: 280px;
+      height: auto;
+    }
+
+    .paper6 img:hover {
+      transform: translate(-87%, 20%) rotate(145deg);
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMTEw/MDAxNjg2MTc5NjE5MTcy.hyAoE6b94jjaSQVEsVbxK50b3moqdOg6rxCW-I67ZRkg.cWcTt3CZTV-F50suqKlCmTsl4taRw9IhT5spRXQPiwog.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-44.png?type=w773");
+  }
+
+    .paper7 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-117%, -150%) rotate(80deg);;;
+      width: 250px;
+      height: auto;
+    }
+
+    .paper7 img:hover {
+      transform: scale(0.8);
+       transform: translate(-117%, -130%) rotate(80deg);;;
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfODgg/MDAxNjg2MTc5NjE5OTkx.HOHrK_7lM7dDt-Hj8duBdxMyq2QCgpaY-57Y_fuc8sQg.OH1BMMTaa3-xintenPrAlLG9yt60c52KCNQuGEgf-4cg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-13-09.png?type=w773");
+  }
+
+
+    .paper8 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-97%, -170%) rotate(73deg);
+      width: 200px;
+      height: auto;
+    }
+
+    .paper8 img:hover {
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMTEw/MDAxNjg2MTc5NjE5MTcy.hyAoE6b94jjaSQVEsVbxK50b3moqdOg6rxCW-I67ZRkg.cWcTt3CZTV-F50suqKlCmTsl4taRw9IhT5spRXQPiwog.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-44.png?type=w773");
+
+  }
+
+
+    .paper9 img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(20%, 0%) rotate(0deg);;
+      width: 290px;
+      height: auto;
+      rotate; 30;
+    }
+
+    .paper9 img:hover {
+      transform: translate(17%, 0%) rotate(0deg);;
+
+    /* 마우스를 올렸을 때의 이미지 스타일을 지정합니다. */
+    /* 예시로 다른 이미지 URL을 사용했습니다. 실제 이미지 URL로 대체해주세요. */
+    content: url("https://postfiles.pstatic.net/MjAyMzA2MDhfMjAz/MDAxNjg2MTc5NjE5MDUw.a_8f-mNFhbwDanBayj6uYrNyI6QnGJ_ncwG0nk_b25Ig.Zm2sm1IbRG_X9rXE2yyJick9RX_Imiet3INrQBqeLnsg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-48.png?type=w773");
+  }
+
+
+  </style>
+</head>
+
+<body>
+
+
+ 
+
+  <div class="letter">
+      <h2>1/ 2/ <br>These are receipts I received from a convenience store in Japan.<br> Sadly, I can't read Japanese, so I don't know what I bought.<br>
+Judging by the time of purchase, it seems like I bought a late-night snack <br> before entering the hotel.<br><br>
+3/<br> This is a receipt I received from the "Neutinamu" cafe <br> at Seoul National University. It's a place I often visit <br> whenever I go to the school, so I sometimes find it in my pants pocket.<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+4/ <br>Airplane ticket from Japan to Korea. On that day, I missed the flight and <br> had to purchase another plane ticket. <br> That ticket is the entrance ticket for the first flight I missed.<br><br>
+5/ <br>I purchased a Bluetooth adapter to connect AirPods to my desktop.<br> It has been a month since the purchase, but I haven't opened the product yet.<br></h2>
+    </div>
+
+
+  <div class="paper">
+    
+
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMTk5/MDAxNjg2MTc5NjE4MTQ4.gFC3DxwxnnH1zX3LmXuRM6ZLiU4dN_AWxC4tZR1WOAcg.P4pAxk1tZ-f_xTs6NEZnx8JxrI8bFpvXWtzALOGx5WIg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-11.png?type=w773" >
+          </a>
+  </div>
+
+  <div class="paper2">
+
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMjU0/MDAxNjg2MTc5NjE4MTYz.9fcNA0002t09jkbnyhiDZ6ZZOylM5NMx_qI83pngitAg.Z-QmCBL3r4KHKIXoyjSn4aGFT3etDwgPti37fXEtOuAg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-16.png?type=w773" >
+    </a>
+
+    <div class="paper3">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMTkz/MDAxNjg2MTc5NjE3OTU4.fk0RAZ7SmdomU8jzU0TLFxNaUkTh6W0wXtFvHTaXQcgg.5eG8xiLEMuPAPk8UMp3wpW9aD2Rc2g5KbosXOACO0gUg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-19.png?type=w773" >
+    </a>
+
+    <div class="paper4">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMTkg/MDAxNjg2MTc5NjE4MTc5.n_rk51uEbObI2uKOf5AGQpIvgIJdXwlWjhYJKtUjDZ0g.fqmOEAGx1MjZCrwU9donCLmFJ3BG9o_H52HRnyfyV9Ug.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-22.png?type=w773" >
+    </a>
+
+    <div class="paper5">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMjQ1/MDAxNjg2MTc5NjE3ODkw.KGwhXmtFZuIejXroDwF85GucuI7EK5jaR6TobcJv-TQg.bStvQj8xe3eR95-IS0--8QBTxTuIkjetanRYc9C5_w8g.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-25.png?type=w773" >
+
+      <div class="paper6">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfNDIg/MDAxNjg2MTc5NjE4MTYy.GE6bvnQspVQ1t-MXLm1ahxwdO_eBSKu4aGV02oHcFz0g.3BNmFXOfgqG-6J86kmcbw3IcjWfsH3q74Je9Ww-crBkg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-27.png?type=w773" >
+
+ <div class="paper7">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfMTc5/MDAxNjg2MTc5NjE4ODA1.7B5pmSWOHMcvp_cWuFZxUXW09I2dIMhVD2mQAKVFrbAg.tWVdF8Ad5bJIF9qWZBkT3GQ_DluCO6HaxI3tQgefEOsg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-40.png?type=w773" >
+
+
+
+
+      <div class="paper9">
+    <a href="index2.html">
+      <img src="https://postfiles.pstatic.net/MjAyMzA2MDhfNDMg/MDAxNjg2MTc5NjE4NDQ2.edRJLej6vs9UR5WZzkshMuH9kJOx3Ejgf4oNgLJ2kDwg.IJklytdGtkKXD1lhA9HcUDywM2-2Nbv_4UZPcirQfYgg.PNG.yeomsw0612/KakaoTalk_Photo_2023-06-08-08-12-30.png?type=w773" >
+    </a>
+  </div>
+</body>
+</html>
