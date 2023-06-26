@@ -1,0 +1,84 @@
+#squaree {
+      width: 100px;
+      height: 100px;
+      background: pink;
+}
+
+#tri {
+ width: 100px;
+      height: 100px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 32%);
+      top: 300px;
+      left: 100px ;
+      background: greenyellow;
+      position:absolute;
+
+}
+
+#cir {
+    width: 120px;
+    height: 120px;
+    clip-path: circle(50% at 50% 50%);
+    top: 300px;
+    left: 300px;
+    background: #ffecd6;
+    position: absolute;
+}
+
+#cir2 {
+    width: 40px;
+    height: 40px;
+    clip-path: circle(50% at 50% 50%);
+    top: 340px;
+    left: 300px;
+    background: #ff9d61;
+    position: absolute;
+}
+
+#cir3 {
+    width: 40px;
+    height: 40px;
+    clip-path: circle(50% at 50% 50%);
+    top: 340px;
+    left: 339px;
+    background: #ff9d61;
+    position: absolute;
+}
+
+#cir4 {
+    width: 40px;
+    height: 40px;
+    clip-path: circle(50% at 50% 50%);
+    top: 340px;
+    left: 379px;
+    background: #ff9d61;
+    position: absolute;
+}
+
+#eye {
+     
+    width: 10px;
+    height: 20px;
+    background: black;
+    top: 335px;
+    left: 373px;
+    border-radius: 171px / 294px;
+        position: absolute;
+}
+  
+
+#eye2 {
+    width: 10px;
+    height: 20px;
+    background: black;
+    top: 326px;
+    left: 334px;
+    border-radius: 171px / 294px;
+    position: absolute;
+}
+
+
+
+
+
+
