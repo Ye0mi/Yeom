@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seungwon's Website</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 150px;
+            color: white;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 110px;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid blue;
+            margin: 20px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            background: radial-gradient(circle, #000 0%, #000 70%, #6af2e4 100%);
+        }
+
+        .circle:nth-child(2) {
+            background: radial-gradient(circle, #000 0%, #000 70%, #a7b5be 100%);
+        }
+
+        .circle:nth-child(3) {
+            background: radial-gradient(circle, #000 0%, #000 70%, #ff7fba 100%);
+        }
+
+        .circle:nth-child(4) {
+            background: radial-gradient(circle, #000 0%, #000 70%, #191f1f 100%);
+        }
+
+        .circle:nth-child(5) {
+            background: radial-gradient(circle, #000 0%, #000 70%, #d4fbe9 100%);
+        }
+    </style>
+
+    <script>
+        function goToExternalLink() {
+            window.location.href = 'https://www.figma.com/proto/h7tCIK5aIOfpDa51zSxQRw/Untitled-(Copy)-(Copy)-(Copy)?type=design&node-id=503-92&scaling=scale-down&page-id=0%3A1&starting-point-node-id=503%3A92&show-proto-sidebar=1&mode=design'
+        }
+    </script>
+</head>
+<body>
+    <h1>Seungwon's Website</h1>
+    <div class="circle-container">
+        <div class="circle" onclick="location.href='../ascii.html'">
+            <span>Ascii</span>
+        </div>
+        <div class="circle" onclick="goToExternalLink()">
+            <span>P1</span>
+        </div>
+        <div class="circle" onclick="location.href='../codingfromlife/index.html'">
+            <span>Coding from life</span>
+        </div>
+        <div class="circle" onclick="location.href='../whatsinmybag/whatsinmybag/index.html'">
+            <span>What's in my bag</span>
+        </div>
+        <div class="circle" onclick="location.href='index2.html'">
+            <span>p2</span>
+        </div>
+    </div>
+</body>
+</html>
