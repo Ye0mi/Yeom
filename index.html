@@ -24,41 +24,13 @@
             font-weight: lighter;
         }
 
-        #darkmode-button:hover {
-            text-shadow: 0px 2px 13px rgba(0,0,0, .6);
-            transform: translateY(-2px);
-        }
-
         body.darkmode {
             background-color: black;
-            color: lightpink;
+            color: grey;
         }
 
         body.darkmode a {
             color: yellowgreen;
-        }
-
-        @media only screen and (max-device-width: 812px) {
-            body {
-                background-color: lightpink;
-            }
-        }
-
-        @media only print {
-            body {
-                font-family: cursive;
-            }
-        }
-
-        body.darkmode {
-            background: black;
-            color: grey;
-            /* redefine a CSS variable */
-            --accent-color: rgb(0,255,0);
-        }
-
-        body.darkmode button {
-            color: blue;
         }
 
         .circle-container {
