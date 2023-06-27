@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
   <title>Seungwon's Website</title>
     <style>
         body {
-            background: black;
+            background: white;
         }
 
         h1 {
             text-align: center;
             margin-top: 150px;
             margin-bottom: 40px;
-            color: white;
+            color: blue;
         }
 
         h2 {
             text-align: center;
             margin-top: 10px;
-            color: white;
+            color: blue;
             font-family: 'Maison neuve', sans-serif;
-      font-size: 17px;
-      font-weight: lighter;
+            font-size: 17px;
+            font-weight: lighter;
+        }
 
+        #darkmode-button:hover {
+            text-shadow: 0px 2px 13px rgba(0,0,0, .6);
+            transform: translateY(-2px);
+        }
+
+        body.darkmode {
+            background-color: black;
+            color: lightpink;
+        }
+
+        body.darkmode a {
+            color: yellowgreen;
+        }
+
+        @media only screen and (max-device-width: 812px) {
+            body {
+                background-color: lightpink;
+            }
+        }
+
+        @media only print {
+            body {
+                font-family: cursive;
+            }
+        }
+
+        body.darkmode {
+            background: black;
+            color: grey;
+            /* redefine a CSS variable */
+            --accent-color: rgb(0,255,0);
+        }
+
+        body.darkmode button {
+            color: blue;
         }
 
         .circle-container {
@@ -61,18 +98,32 @@
         .circle:nth-child(5) {
             background: radial-gradient(circle, #000 0%, #000 70%, #d4fbe9 100%);
         }
+        
+        .darkmode-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .darkmode-container button {
+            color: blue;
+        }
     </style>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        function goToExternalLink() {
-            window.location.href = 'https://www.figma.com/proto/h7tCIK5aIOfpDa51zSxQRw/Untitled-(Copy)-(Copy)-(Copy)?type=design&node-id=503-92&scaling=scale-down&page-id=0%3A1&starting-point-node-id=503%3A92&show-proto-sidebar=1&mode=design'
-        }
+        $(document).ready(function() {
+            $("#darkmode").click(function() {
+                $("body").toggleClass("darkmode");
+            });
+        });
     </script>
 </head>
+
 <body>
     <h1>Seungwon's Website</h1>
-    <h2> I'm also Yeomi </h2>
-    <h2> I love rabbits a lot </h2>
+    <h2>I'm also Yeomi</h2>
+    <h2>I love rabbits a lot</h2>
 
     <div class="circle-container">
         <div class="circle" onclick="location.href='ascii.html'">
@@ -90,6 +141,10 @@
         <div class="circle" onclick="location.href='bbday.html'">
             <span>p2</span>
         </div>
-  </script>
+    </div>
+
+    <div class="darkmode-container">
+        <button id="darkmode">Dark Mode</button>
+    </div>
 </body>
 </html>
