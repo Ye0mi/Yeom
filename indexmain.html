@@ -1,7 +1,45 @@
-<div id="cincopa_07c3e7">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cincopa_07c3e7"; cpo["_fid"] = "A8MAx8-B16EA";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>랜덤 이미지 사이트</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: black;
+    }
+    img {
+      max-width: 600px;
+      max-height: 600px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+  <script>
+    function getRandomImage() {
+      var images = [
+        'https://blog.kakaocdn.net/dn/yDtgP/btrJaVA4iLN/9QtVWLrCIrUtDz7U4Udsr0/img.jpg',
+        'https://blog.kakaocdn.net/dn/cEFQ4b/btrGXg29JVF/d7JDvKSWaaZYsORhh1n9N1/img.jpg',
+        'https://i.pinimg.com/736x/83/ce/e5/83cee5dd58febe60279dc639dbb3990e.jpg',
+        'https://i.pinimg.com/564x/c0/df/09/c0df097e3b88876a71e94d308fb7b5f7.jpg'
+        ''
+        // 랜덤 이미지의 URL 주소들을 배열에 추가해주세요.
+      ];
+      var randomIndex = Math.floor(Math.random() * images.length);
+      var randomImage = images[randomIndex];
+      return randomImage;
+    }
+    
+    function showRandomImage() {
+      var imgElement = document.getElementById('random-image');
+      imgElement.src = getRandomImage();
+    }
+  </script>
+</head>
+<body onload="showRandomImage()">
+  <img id="random-image" src="" alt="랜덤 이미지">
+</body>
+</html>
